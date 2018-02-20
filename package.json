@@ -1,0 +1,23 @@
+{
+  "name": "juventus_semesterarbeit_webentwicklung_4i_2018",
+  "version": "1.0.0",
+  "description": "https://www.themoviedb.org/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christianpetri/Juventus_Semesterarbeit_Webentwicklung_4I_2018.git"
+  },
+  "author": "Christian Petri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christianpetri/Juventus_Semesterarbeit_Webentwicklung_4I_2018/issues"
+  },
+  "homepage": "https://github.com/christianpetri/Juventus_Semesterarbeit_Webentwicklung_4I_2018#readme",
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
+}
