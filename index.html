@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <title>Search</title>
-      <script src="node_modules/jquery/dist/jquery.min.js"></script>
-      <script src="src/app/app.js"></script>
-      <link rel="stylesheet" href="src/css/index.css">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="src/app/app.js"></script>
+    <link rel="stylesheet" href="src/css/index.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  </head>
-  <body>
-  <h1>Search Movie Database</h1>
-  <input type="text" id="searchQueryInput"/>
-  <br>
-  <button type="button" class="btn btn-primary btn-lg" onclick="getMoviesQuery('0')">Search Movie Database</button>
-  <!--<div id="searchContainer"></div>-->
-  <ul id="result"></ul>
-  <ul id="resultDetail"></ul>
-  <div id="moviePageNavigation"> </div>
-  </body>
-  <footer>
-      This product uses the TMDb API but is not endorsed or certified by TMDb.
-       <img style="height:30px" src="src/img/logo_tmdb.png" alt="logo_tmdb"/>
-  </footer>
+</head>
+<body>
+<div class="container">
+    <h1>Search Movie Database</h1>
+    <input type="text" id="searchQueryInput"/>
+    <br>
+    <button id="seachQueryButton" type="button" class="btn btn-primary btn-lg" onclick="getMoviesQuery('1')">Search Movie Database</button>
+    <div id="moviePageNavigation"></div>
+    <div class="row">
+    <ul id="result" class="col-sm-5"></ul>
+    <div id="resultDetail" class="col-sm-5"></div>
+    </div>
+
+</body>
+<footer>
+    This product uses the TMDb API but is not endorsed or certified by TMDb.
+    <img style="height:30px" src="src/img/logo_tmdb.png" alt="logo_tmdb"/>
+</footer>
+</div>
 </html>
