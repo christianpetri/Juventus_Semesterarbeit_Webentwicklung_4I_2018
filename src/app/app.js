@@ -15,40 +15,58 @@ function  getMoviesQuery($currentPage) {
     $apiKey = "84b8bbc00a5c8c683ef60c5709687388";
     $("#result").empty();
     $("#resultDetail").empty();
+    $("#moviePageNavigation").empty();
     $url = 'https://api.themoviedb.org/3/search/movie?api_key='+ $apiKey +'&language=en-US&query=' + $searchQuery + '&page='+$currentPage+'&include_adult=false';
     $.get($url, function (data) {
         var movies = data.results;
         $movie = data;
-        movies.forEach(function (movie) {
-            $('<li>')
-                .appendTo('#result')
-                .text(movie.title +" ")
+        if($movie.total_results !== 0){
+            movies.forEach(function (movie) {
+                $('<div>')
+                    .appendTo('#result')
+                    .html('<a onclick="getMovieDetails(' + movie.id + ')">'+ movie.title +"</a>")
+
+            })
+            $('<div>')
+                .appendTo('#moviePageNavigation')
                 .append(
-                    $(' <button onclick="getMovieDetails(' + movie.id + ')">')
-                        .text("Get Details")
+                    movieSearchResultNavigation( $currentPage, $movie.total_pages )
                 )
-        })
-        $("#moviePageNavigation").empty();
-        $moveOnePageForward = $currentPage;
-        $moveOnePageBack = $currentPage;
-        if($currentPage < $movie.total_pages)
-            $moveOnePageForward =   parseInt($currentPage, 10)  +   1;
-        if($currentPage > 1)
-            $moveOnePageBack    =   parseInt($currentPage, 10)  -   1;
-
-        $('<div>')
-            .appendTo('#moviePageNavigation')
-            .text("Page " + $currentPage + " of " + $movie.total_pages +" ")
-
-            .append(
-                $("<button onclick=\"getMoviesQuery('1')\">First Page</button>" ),
-                $("<button onclick=\"getMoviesQuery('" + $moveOnePageBack + "')\">previous page</button>" ),
-                $("<button onclick=\"getMoviesQuery('" + $moveOnePageForward + "')\">next page</button>" ),
-                $("<button onclick=\"getMoviesQuery('" + $movie.total_pages + "')\">last page</button>" )
-
-            )
-
+        } else{
+            $('<div>')
+                .appendTo('#result')
+                .html("Not movie(s) found")
+        }
     });
+}
+function movieSearchResultNavigation($currentPage, $movie_total_pages) {
+    //.text("Page " + $currentPage + " of " + $movie_total_pages +" ")
+    var $html = "";
+    if(parseInt($movie_total_pages, 10) > 1000){ //API restriction
+        $movie_total_pages = 1000;
+    }
+    var $moveOnePageForward = $currentPage;
+    var $moveOnePageBack = $currentPage;
+    if(parseInt($currentPage,10) < 1000)
+        $moveOnePageForward =   parseInt($currentPage, 10)  +   1;
+    if($currentPage > 1)
+        $moveOnePageBack    =   parseInt($currentPage, 10)  -   1;
+
+    if($currentPage !== "1"){
+        $html += "<a href='#' title=\"first page\"    onclick=\"getMoviesQuery('1')\"> << </a>" ;
+        $html += "<a href='#' title=\"previous page\" onclick=\"getMoviesQuery('" + $moveOnePageBack + "')\"> < </a>" ;
+    }
+    for($i = 1; $i < 10;$i++){
+        if( $i === parseInt($currentPage, 10))
+            $html += "<a href='#'  title=\""+$i+"\" onclick=\"getMoviesQuery('" + $i + "')\"><strong>["+ $i +"]</strong></a>";
+        else
+            $html += "<a href='#'  title=\""+$i+"\" onclick=\"getMoviesQuery('" + $i + "')\">["+ $i +"]</a>";
+        if($i === parseInt($movie_total_pages, 10))
+            break;
+    }
+    $html += "<a href='#'  title=\"next page\"      onclick=\"getMoviesQuery('" + $moveOnePageForward + "')\"> > </a>";
+    $html += "<a href='#'   title=\"last page\"       onclick=\"getMoviesQuery('" + $movie_total_pages + "')\"> >> </a>";
+    return $html;
 }
 
 function getMovieDetails($movieID) {
