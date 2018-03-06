@@ -52,20 +52,39 @@ function movieSearchResultNavigation($currentPage, $movie_total_pages) {
     if($currentPage > 1)
         $moveOnePageBack    =   parseInt($currentPage, 10)  -   1;
 
-    if($currentPage !== "1"){
-        $html += "<a href='#' title=\"first page\"    onclick=\"getMoviesQuery('1')\"> << </a>" ;
-        $html += "<a href='#' title=\"previous page\" onclick=\"getMoviesQuery('" + $moveOnePageBack + "')\"> < </a>" ;
+    if($currentPage !== "1") {
+        $html += "<a href='#' title=\"first page\"    onclick=\"getMoviesQuery('1')\"> << </a>";
+        $html += "<a href='#' title=\"previous page\" onclick=\"getMoviesQuery('" + $moveOnePageBack + "')\"> < </a>";
     }
-    for($i = 1; $i < 10;$i++){
-        if( $i === parseInt($currentPage, 10))
-            $html += "<a href='#'  title=\""+$i+"\" onclick=\"getMoviesQuery('" + $i + "')\"><strong>["+ $i +"]</strong></a>";
-        else
-            $html += "<a href='#'  title=\""+$i+"\" onclick=\"getMoviesQuery('" + $i + "')\">["+ $i +"]</a>";
-        if($i === parseInt($movie_total_pages, 10))
-            break;
+    if($currentPage == "1")
+        $html += "<< < ";
+    if(parseInt($movie_total_pages, 10) <= 9 || parseInt($currentPage, 10) < 5){
+        for($i = 1; $i < 10 ;$i++) {
+            $pageNumber = $i;
+            if ($pageNumber === parseInt($currentPage, 10))
+                $html += "<a href='#'  title=\"" + $pageNumber + "\" onclick=\"getMoviesQuery('" + $pageNumber + "')\"><strong>[" + $pageNumber + "]</strong></a>";
+            else
+                $html += "<a href='#'  title=\"" + $pageNumber + "\" onclick=\"getMoviesQuery('" + $pageNumber + "')\">[" + $pageNumber + "]</a>";
+            if(parseInt($movie_total_pages,10) == $i)
+                break;
+        }
+    } else{
+            for($i = -4; $i < 5;$i++) {
+                $pageNumber = parseInt($currentPage, 10) + $i;
+                if (($pageNumber === parseInt($currentPage, 10)))
+                    $html += "<a href='#'  title=\"" + $pageNumber + "\" onclick=\"getMoviesQuery('" + $pageNumber + "')\"><strong>[" + $pageNumber + "]</strong></a>";
+                else
+                    $html += "<a href='#'  title=\"" + $pageNumber + "\" onclick=\"getMoviesQuery('" + $pageNumber + "')\">[" + $pageNumber + "]</a>";
+
+                if(parseInt($pageNumber, 10) == $movie_total_pages)
+                    break;
+            }
+
     }
-    $html += "<a href='#'  title=\"next page\"      onclick=\"getMoviesQuery('" + $moveOnePageForward + "')\"> > </a>";
-    $html += "<a href='#'   title=\"last page\"       onclick=\"getMoviesQuery('" + $movie_total_pages + "')\"> >> </a>";
+    if(parseInt($currentPage, 10) < parseInt($movie_total_pages, 10) ){
+        $html += "<a href='#'  title=\"next page\"      onclick=\"getMoviesQuery('" + $moveOnePageForward + "')\"> > </a>";
+        $html += "<a href='#'   title=\"last page\"       onclick=\"getMoviesQuery('" + $movie_total_pages + "')\"> >> </a>";
+    }
     return $html;
 }
 
@@ -102,4 +121,12 @@ function httpGetAsync(theUrl) {
     xmlHttp.open("GET", theUrl, true); // true for asynchronous
     xmlHttp.send(null);
 }
+
+
+x 2 3 4 5 6 7 8 9
+1 x 3 4 5 6 7 8 9
+1 2 x 4 5 6 7 8 9
+1 2 3 x 5 6 7 8 9
+1 2 3 4 x 6 7 8 9
+2 3 4 5 x 7 8 9 10
 */
