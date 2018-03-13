@@ -5,6 +5,10 @@ import {apiKey} from './constants';
 import '../css/index.css';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../img/logo_tmdb.png';
+//import 'movie-model.js';
+import model from "./movie-model";
+
+
 
 route('/', function () {
 	$('#content').empty();
@@ -39,6 +43,38 @@ $(document).ready(function () {
 		getMoviesQuery('1');
 	});
 });
+
+
+
+$(model).on('modelchange',() => {
+	renderMovies();
+});
+
+function renderMovies() {
+	const $resultList = $('#result');
+	$resultList.html('');
+	for (const movie of model.movieList) { // Alle Filme im Model
+		$('<li>') // anzeigen
+			.appendTo('#resultMovieList')
+			.addClass('list-group-item')
+			.text(movie.title);
+	}
+}
+
+$('#searchBtn').on('click', doSearch()); // jQuery event auf search registrieren
+
+function doSearch() {
+	//model.resetMovieList(); // movieList im Model zurücksetzen
+	var searchQuery = $('#searchQueryInput').val();
+	var url = 'https://api.themoviedb.org/3/search/movie?api_key=' + apiKey + '&language=en-US&query=' + searchQuery + '&page=' + currentPage + '&include_adult=false';
+	$.get(url, function (data) { // URL auf Filme mit Suchkriterium
+		const movies = data.results;
+		for (const movie of movies) { // Über Resultat iterieren
+			model.addMovie(movie); // Jeden Film dem Model hinzufügen
+		}
+	});
+}
+
 function getMoviesQuery (currentPage) {
 	var searchQuery = $('#searchQueryInput').val();
 	$('#result').empty();
