@@ -20,13 +20,15 @@ module.exports = {
 				{use: ['css-loader']})},
 			{test: /\.less$/, use: ExtractTextWebpackPlugin.extract(
 				{use: ['css-loader', 'less-loader']})},
-			{test: /\.(jpg|png|svg|ttf|woff|woff2|eot)$/,
-				use: 'url-loader?limit=25000'
-			},
+            {test: /\.(jpg|png|svg|ttf|woff|woff2|eot)$/,
+                use: 'url-loader?limit=100000'
+            },
 			{
 				test: /\.(jpe?g|png|gif|svg)$/i,
-				loader: 'file-loader?name=/public/img/[name].[ext]'
+                exclude: /node_modules/,
+				loader: 'file-loader?name=./img/[name].[ext]'
 			},
+
 			{test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ }
 		]
 	},

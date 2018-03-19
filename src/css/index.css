@@ -5,3 +5,7 @@ footer{
 #resultDetail img{
     width: 100%;
 }
+
+img {
+    height: 30px;
+}

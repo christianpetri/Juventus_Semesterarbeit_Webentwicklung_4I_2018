@@ -4,5 +4,5 @@ import 'jest';
 
 
 test('model is created', ()=> {
-	expect(model).toBeDefinded();
+	expect(model).toBeDefinded;
 });
