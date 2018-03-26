@@ -31,6 +31,10 @@ function getMovie(id) {
     });
 }
 
+function getGenere() {
+	
+}
+
 const model = {addMovie, getMovie, resetMovieList};
 model.movieList = [];
 const $model = $(model);

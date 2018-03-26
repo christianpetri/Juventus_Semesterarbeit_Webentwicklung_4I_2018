@@ -28,7 +28,35 @@ route('/', function () {
     '</div>'
 );
 });
-
+route('/top', function () {
+	$('#content').empty();
+	$('<div>').appendTo('#content').html(
+		'<h1>Top Rated Movies</h1>' +
+		'<br>' +
+		'<div id="moviePageNavigation"></div>' +
+		'<div class="row">' +
+		'<div id="resultMovieList" class="col-sm-5"></div>' +
+		'<div id="resultMovieListDetail" class="col-sm-7"></div>' +
+		'</div>'
+	);
+	getTopRatedMovies();
+});
+route('/topgenre', function () {
+	$('#content').empty();
+	$('<div>').appendTo('#content').html(
+		'<h1>Movie Genre</h1>' +
+		'<br>'
+		/*'<button id="searchQueryButton" type="button" class="btn btn-primary btn-lg">Search Movie Database</button>'*/
+	);
+	$('<div>').appendTo('#content').html(
+		'<div id="moviePageNavigation"></div>' +
+		'<div class="row">' +
+		'<div id="resultMovieList" class="col-sm-5"></div>' +
+		'<div id="resultMovieListDetail" class="col-sm-7"></div>' +
+		'</div>'
+	);
+	getMovieGenres();
+});
 
 route('search', function () {
 	$('#content').empty().html('Search');
@@ -93,6 +121,31 @@ function showDetails(movie) {
         .append('<br>' + image);
 
 }
+//https://api.themoviedb.org/3/movie/top_rated?api_key=<<api_key>>&language=en-US&page=1
+function getTopRatedMovies() {
+	model.resetMovieList();
+	$('#resultMovieListDetail').html('');
+	const currentPage = 1;
+	const url = 'https://api.themoviedb.org/3/movie/top_rated?api_key=' + apiKey + '&language=en-US&&page=' + currentPage;
+	$.get(url, function (data) { // URL with movies that meet the search criteria
+		const movies = data.results;
+		for (const movie of movies) { // Going over the results
+			model.addMovie(movie); // Add every movie to the model
+		}
+	});
+}
 
+//https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US
+function getMovieGenres() {
+	model.resetMovieList();
+	$('#resultMovieListDetail').html('');
+	const url = 'https://api.themoviedb.org/3/genre/movie/list?api_key=' + apiKey + '&language=en-US';
+	$.get(url, function (data) { // URL with movies that meet the search criteria
+		const movies = data.results;
+		for (const movie of movies) { // Going over the results
+			model.addMovie(movie); // Add every movie to the model
+		}
+	});
+}
 route.stop(); // clear all the old router callbacks
 route.start(true); // start again
