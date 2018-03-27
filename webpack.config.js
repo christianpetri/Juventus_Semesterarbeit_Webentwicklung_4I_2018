@@ -13,6 +13,7 @@ module.exports = {
 		path: path.resolve(__dirname,'public'),
 		filename: './public/bundle.[chunkhash].js'
 	},
+	resolve: { extensions: ['.ts', '.js'] },
 	devtool: 'source-map',
 	module: {
 		rules: [
@@ -29,7 +30,8 @@ module.exports = {
 				loader: 'file-loader?name=./img/[name].[ext]'
 			},
 
-			{test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ }
+			{test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ },
+			{test: /\.ts$/, use: 'ts-loader', exclude: /node_modules/ }
 		]
 	},
 	plugins: [

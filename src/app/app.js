@@ -5,8 +5,10 @@ import {apiKey} from './constants';
 import '../css/index.css';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../img/logo_tmdb.png';
-import model from "./movie-model";
+//import model from "./movie-model";
+import {DefaultMovieModel} from "./movie-model";
 
+let model = new DefaultMovieModel();
 
 route('/', function () {
     $('#content').empty();
