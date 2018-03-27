@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "start": "webpack-dev-server --open --port 8000",
-    "analyze": "eslint src/**/*.js",
+    "analyze": "tslint src/**/*.js",
     "build": "npm run clean && webpack -p",
     "clean": "rimraf public"
   },
@@ -19,12 +19,17 @@
       "src"
     ],
     "moduleFileExtensions": [
+      "ts",
       "js"
     ],
     "transform": {
       "^.+\\.js$": "babel-jest",
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js",
       "^+\\.(css|scss|less)$": "jest-css-modules"
-    }
+    },
+    "testMatch": [
+      "**/?(*.)(spec|test).(ts|js)"
+    ]
   },
   "repository": {
     "type": "git",
@@ -37,6 +42,7 @@
   },
   "homepage": "https://github.com/christianpetri/Juventus_Semesterarbeit_Webentwicklung_4I_2018#readme",
   "devDependencies": {
+    "@types/jest": "^22.2.2",
     "@types/jquery": "^3.3.1",
     "ajv": "^5.0.0",
     "babel-core": "^6.26.0",
@@ -51,7 +57,9 @@
     "jest-css-modules": "^1.1.0",
     "less-loader": "^4.1.0",
     "rimraf": "^2.6.2",
+    "ts-jest": "^21.2.3",
     "ts-loader": "^3.1.1",
+    "tslint": "^5.9.1",
     "typescript": "^2.8.1",
     "url-loader": "^1.0.1",
     "webpack": "^3.8.1",

@@ -1,5 +1,6 @@
 
-import model from '../src/app/movie-model';
+//import model from '../src/app/movie-model'
+import {DefaultMovieModel} from "../src/app/movie-model";
 import 'jest';
 
 
