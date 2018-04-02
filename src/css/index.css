@@ -1,5 +1,10 @@
 footer{
     padding-top: 10px;
+    padding-bottom: 10px;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
 }
 
 #resultDetail img{

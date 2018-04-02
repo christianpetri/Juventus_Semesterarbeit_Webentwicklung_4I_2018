@@ -5,7 +5,7 @@ import {Movie} from "./Movie";
 export interface MovieModel {
 	movieList: Movie [];
 	addMovie : (movie : any ) => void;
-	getMovie : (id : string) => Movie ;
+	getMovie : (id : number) => Movie ;
     resetMovieList : () => void;
 }
 
@@ -28,13 +28,9 @@ export class DefaultMovieModel implements MovieModel {
         this.notifyModelChange();
     }
 
-    public getMovie(id) {
+    public getMovie(id : number) {
         return this.movieList.find(function(movie){
             return movie.id === id;
         });
-    }
-
-    public getGenere() {
-
     }
 }

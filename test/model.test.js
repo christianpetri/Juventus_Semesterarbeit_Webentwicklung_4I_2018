@@ -5,5 +5,5 @@ import 'jest';
 
 
 test('model is created', ()=> {
-	expect(model).toBeDefinded;
+	expect(DefaultMovieModel).toBeDefinded;
 });
