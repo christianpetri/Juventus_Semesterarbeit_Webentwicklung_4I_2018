@@ -47,19 +47,11 @@ route('/top', function () {
 	getTopRatedMovies();
 });
 
-//with_genres
-// string
-// Comma separated value of genre ids that you want to include in the results.
-//sort_by: Popularity
-//Choose from one of the many available sort options.
-//Allowed Values: , popularity.asc, popularity.desc, release_date.asc, release_date.desc, revenue.asc, revenue.desc, primary_release_date.asc, primary_release_date.desc, original_title.asc, original_title.desc, vote_average.asc, vote_average.desc, vote_count.asc, vote_count.desc
-//default: popularity.desc
 ////https://api.themoviedb.org/3/discover/movie?api_key=84b8bbc00a5c8c683ef60c5709687388&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=12
 route('/topgenre', function () {
 	$('#content').empty();
 	$('<h1>').appendTo('#content').text('Top ... by genres');
 	$('<div>').appendTo('#content').attr('id' , 'genres').addClass('col-sm-2');
-	//$('<hr>').appendTo('#content');
 	$('<div>').appendTo('#content').attr('id' , 'resultMovieList').addClass('col-sm-4');
 	$('<div>').appendTo('#content').attr('id' , 'resultMovieListDetail').addClass('col-sm-5');
 
@@ -152,20 +144,6 @@ function getTopRatedMovies() {
 			model.addMovie(movie); // Add every movie to the model
 		}
 	});
-}
-//
-//
-//https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US
-function getMovieGenres() {
-	$('#resultMovieListDetail').html('');
-	const url = 'https://api.themoviedb.org/3/genre/movie/list?api_key=' + apiKey + '&language=en-US';
-	$.get(url, function (data) { // URL with movies that meet the search criteria
-		const genre = data.genres;
-
-		for(var i = 0; i < genre.length; i++)
-			$('<option>').appendTo('#resultMovieListDetail').text( genre[i].id + " " + genre[i].name );
-		$("#resultMovieListDetail").appendTo('#resultMovieListDetail').text("</select>");
-	})
 }
 
 route.stop(); // clear all the old router callbacks
