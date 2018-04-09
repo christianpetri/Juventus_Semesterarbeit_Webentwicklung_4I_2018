@@ -1,3 +1,4 @@
+///<reference path="../../node_modules/@types/jquery/index.d.ts"/>
 import 'bootstrap';
 import 'less';
 import 'riot-route';
@@ -54,22 +55,29 @@ route('/topgenre', function () {
 	$('<div>').appendTo('#content').attr('id' , 'genres').addClass('col-sm-2');
 	$('<div>').appendTo('#content').attr('id' , 'resultMovieList').addClass('col-sm-4');
 	$('<div>').appendTo('#content').attr('id' , 'resultMovieListDetail').addClass('col-sm-5');
-
+    $('#genres,#resultMovieList,#resultMovieListDetail').wrapAll('<div>').addClass('row');
 	const url = 'https://api.themoviedb.org/3/genre/movie/list?api_key=' + apiKey + '&language=en-US';
 	$.get(url, function (data) { // URL with movies that meet the search criteria
 		const genre = data.genres;
-		for(var i = 0; i < genre.length; i++) {
+		for(let i = 0; i < genre.length; i++) {
 			const genreID : number = genre[i].id;
 			$('<div>').appendTo('#genres')
-				.html(genre[i].name) //genre[i].id
+				.html(genre[i].name)
 				.on( 'click', () => { doSearchForGenres( {genreID: genreID } )});
 		}
 	});
 });
 
-route('search', function () {
-	$('#content').empty().html('Search');
+//https://api.themoviedb.org/3/movie/upcoming?api_key=<<api_key>>&language=en-US&page=1
+route('upcoming', function () {
+    $('#content').empty();
+    $('<h1>').appendTo('#content').text('Upcoming Movies');
+    $('<div>').appendTo('#content').attr('id' , 'resultMovieList').addClass('col-sm-5');
+    $('<div>').appendTo('#content').attr('id' , 'resultMovieListDetail').addClass('col-sm-7');
+    $('#resultMovieList,#resultMovieListDetail').wrapAll('<div>').addClass('row');
+    getUpcomingMovies();
 });
+
 
 $(model).on('modelchange',() => {
 	renderMovies();
@@ -88,17 +96,11 @@ function renderMovies() {
 }
 
 function doSearch() {
-    model.resetMovieList();
     $('#resultMovieListDetail').html('');
 	const searchQuery = $('#searchQueryInput').val();
     const currentPage = 1;
     const url = 'https://api.themoviedb.org/3/search/movie?api_key=' + apiKey + '&language=en-US&query=' + searchQuery + '&page=' + currentPage + '&include_adult=false';
-	$.get(url, function (data) { // URL with movies that meet the search criteria
-		const movies = data.results;
-		for (const movie of movies) { // Going over the results
-			model.addMovie(movie); // Add every movie to the model
-		}
-	});
+    addMovies(url);
 }
 
 function doSearchForGenres(parameters: { genreID: any }) {
@@ -107,16 +109,10 @@ function doSearchForGenres(parameters: { genreID: any }) {
 	$('#resultMovieListDetail').html('');
 	////https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=12
 	const url = 'https://api.themoviedb.org/3/discover/movie?&api_key=' + apiKey + '&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=' + genreID;
-	$.get(url, function (data) { // URL with movies that meet the search criteria
-		const movies = data.results;
-		for (const movie of movies) { // Going over the results
-			model.addMovie(movie); // Add every movie to the model
-		}
-	});
+    addMovies(url);
 }
 
 function showDetails(movie : Movie) {
-    //alert(movieDetail.title);
     const resultMovieListDetail = $('#resultMovieListDetail');
     resultMovieListDetail.html('');
     let image = '';
@@ -134,16 +130,25 @@ function showDetails(movie : Movie) {
 }
 //https://api.themoviedb.org/3/movie/top_rated?api_key=<<api_key>>&language=en-US&page=1
 function getTopRatedMovies() {
-	model.resetMovieList();
-	$('#resultMovieListDetail').html('');
 	const currentPage = 1;
 	const url = 'https://api.themoviedb.org/3/movie/top_rated?api_key=' + apiKey + '&language=en-US&&page=' + currentPage;
-	$.get(url, function (data) { // URL with movies that meet the search criteria
-		const movies = data.results;
-		for (const movie of movies) { // Going over the results
-			model.addMovie(movie); // Add every movie to the model
-		}
-	});
+    addMovies(url);
+}
+
+function addMovies(url : string) {
+    model.resetMovieList();
+    $.get(url, function (data) { // URL with movies that meet the search criteria
+        const movies = data.results;
+        for (const movie of movies) { // Going over the results
+            model.addMovie(movie); // Add every movie to the model
+        }
+    });
+}
+
+function getUpcomingMovies() {
+    const currentPage = 1;
+    const url = 'https://api.themoviedb.org/3/movie/upcoming?api_key=' + apiKey + '&language=en-US&&page=' + currentPage;
+    addMovies(url);
 }
 
 route.stop(); // clear all the old router callbacks
