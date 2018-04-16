@@ -69,6 +69,33 @@ route('upcoming', function () {
     getUpcomingMovies();
 });
 
+route('example', function () {
+    $('#content').empty();
+    $('<h1>').appendTo('#content').text('example');
+    standardMoiveBody();
+    var data = {searchString: 'b'};
+    var url = 'http://localhost:3000/';
+    var destiny = 'moviesearchquery';
+    postData(url, destiny , data);
+    /*
+    fetch('http://localhost:3000/sample', {
+        method: 'post',
+        body: JSON.stringify(data),
+        headers: new Headers({
+            'Content-Type': 'application/json'
+        })
+    }).then((response) => {
+        console.log(response);
+        return response.json();
+    }).then(re => {
+        for (const movie of re.results) { // Going over the results
+            $('<div>').appendTo('#content').text( movie.message);
+        }}).catch((err) => {
+        console.log(err);
+    });
+    */
+});
+
 $(model).on('modelchange', () => {
     renderMovies();
 });
@@ -169,29 +196,25 @@ function standardMoiveBody() {
     $('#resultMovieList,#resultMovieListDetail').wrapAll('<div>').addClass('row');
 }
 
+function postData(url : string, destiny : string , data : any){
+    console.log(url + destiny);
+    fetch(url +''+ destiny,
+        {
+        method: 'post',
+        body: JSON.stringify(data),
+        headers: new Headers({
+            'Content-Type': 'application/json'
+        })
+    }).then((response) => {
+        console.log(response);
+        //return response.json();
+    }).catch((err) => {
+        console.log(err);
+    });
+}
+
 route.stop(); // clear all the old router callbacks
 route.start(true); // start again
 
-/*
-fetch(url, {
-    method: 'get'
-}).then((response) => {
-    console.log(response.json());
-}).catch((err) => {
-    console.log(err);
-});
-*/
-
-$(document).ready(function () {
-
-        fetch('http://localhost:3000/sample', {
-            method: 'get'
-        }).then((response) => {
-            console.log(response);
-            //return response.json();
-        }).catch((err) => {
-            console.log(err);
-        });
-});
 
 

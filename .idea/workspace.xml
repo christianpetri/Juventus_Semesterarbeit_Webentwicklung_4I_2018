@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3de27988-1620-441f-968c-319c9c47ffd9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/bundle-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/bundle-report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo.html" beforeDir="false" afterPath="$PROJECT_DIR$/todo.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,17 +27,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/app.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="41" column="70" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="70" />
+            <state relative-caret-position="629">
+              <caret line="87" column="30" lean-forward="true" selection-start-line="87" selection-start-column="30" selection-end-line="87" selection-end-column="30" />
               <folding>
+                <element signature="e#484#920#0" />
+                <element signature="e#950#1136#0" />
+                <element signature="e#1359#2488#0" />
                 <element signature="n#!!block;n#renderMovies#0" />
+                <element signature="n#!!block;n#doSearch#0" />
                 <element signature="n#!!block;n#doSearchForGenres#0" />
                 <element signature="n#!!block;n#showDetails#0" />
                 <element signature="n#!!block;n#getTopRatedMovies#0" />
                 <element signature="n#!!block;n#addMovies#0" />
+                <element signature="n#!!block;n#getUpcomingMovies#0" />
+                <element signature="n#!!block;n#standardMoiveBody#0" />
               </folding>
             </state>
           </provider>
@@ -58,7 +61,7 @@
       <file leaf-file-name="todo.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/todo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="703">
+            <state relative-caret-position="799">
               <caret line="47" column="76" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="76" />
             </state>
           </provider>
@@ -82,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="movie-model.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="movie-model.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/movie-model.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+            <state relative-caret-position="153">
+              <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -171,8 +174,8 @@
         <option value="$PROJECT_DIR$/test/model.test.js" />
         <option value="$PROJECT_DIR$/src/css/index.css" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/src/app/app.ts" />
         <option value="$PROJECT_DIR$/todo.html" />
+        <option value="$PROJECT_DIR$/src/app/app.ts" />
       </list>
     </option>
   </component>
@@ -193,10 +196,10 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="2553" />
+    <option name="width" value="1294" />
+    <option name="height" value="1407" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -364,7 +367,8 @@
       <workItem from="1522772071681" duration="30000" />
       <workItem from="1523266178050" duration="17801000" />
       <workItem from="1523376883311" duration="7086000" />
-      <workItem from="1523389614120" duration="2578000" />
+      <workItem from="1523389614120" duration="3957000" />
+      <workItem from="1523890708385" duration="6261000" />
     </task>
     <task id="LOCAL-00001" summary="Next Button">
       <created>1520245334245</created>
@@ -450,7 +454,14 @@
       <option name="project" value="LOCAL" />
       <updated>1523284373236</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="added MongoDB">
+      <created>1523393969347</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1523393969347</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -468,7 +479,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="185746000" />
+    <option name="totallyTimeSpent" value="193386000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -480,17 +491,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="2553" y="0" width="1294" height="1407" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="17" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.7890499" visible="true" weight="0.18229716" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.7890499" visible="true" weight="0.13535032" />
       <window_info anchor="bottom" id="TODO" order="12" weight="0.32934782" />
       <window_info anchor="bottom" id="Docker" order="17" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.50105375" side_tool="true" weight="0.32792208" />
       <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.4926238" weight="0.32900432" />
-      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.65173864" weight="0.32575756" />
       <window_info id="npm" order="5" sideWeight="0.21095008" side_tool="true" weight="0.18229716" />
+      <window_info active="true" anchor="bottom" id="Run" order="4" sideWeight="0.65173864" visible="true" weight="0.3254902" />
       <window_info id="Structure" order="3" sideWeight="0.49434572" side_tool="true" weight="0.24973656" />
       <window_info anchor="bottom" id="Terminal" order="16" sideWeight="0.4910432" weight="0.3300866" />
       <window_info id="Favorites" order="6" side_tool="true" />
@@ -505,24 +516,24 @@
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49841937" weight="0.32900432" />
     </layout>
     <layout-to-restore>
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4926238" weight="0.32900432" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info id="npm" order="2" sideWeight="0.21095008" side_tool="true" visible="true" weight="0.18229716" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.65173864" weight="0.32575756" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7890499" visible="true" weight="0.18229716" />
       <window_info id="Structure" order="1" sideWeight="0.49434572" side_tool="true" weight="0.24973656" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32934782" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49841937" weight="0.32900432" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.65173864" weight="0.32575756" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39935064" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4910432" weight="0.3300866" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50105375" side_tool="true" visible="true" weight="0.32792208" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4926238" weight="0.32900432" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49841937" weight="0.32900432" />
       <window_info active="true" anchor="bottom" id="Messages" order="7" sideWeight="0.49894625" visible="true" weight="0.32792208" />
       <window_info id="Favorites" order="3" side_tool="true" />
     </layout-to-restore>
@@ -555,7 +566,8 @@
     <MESSAGE value="upcoming movies" />
     <MESSAGE value="upcoming movies added" />
     <MESSAGE value="removed some html an added the it as &quot;JavaScript&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed some html an added the it as &quot;JavaScript&quot;" />
+    <MESSAGE value="added MongoDB" />
+    <option name="LAST_COMMIT_MESSAGE" value="added MongoDB" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -568,11 +580,17 @@
         <state relative-caret-position="1581">
           <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
           <folding>
+            <element signature="e#484#920#0" />
+            <element signature="e#950#1136#0" />
+            <element signature="e#1359#2488#0" />
             <element signature="n#!!block;n#renderMovies#0" />
+            <element signature="n#!!block;n#doSearch#0" />
             <element signature="n#!!block;n#doSearchForGenres#0" />
             <element signature="n#!!block;n#showDetails#0" />
             <element signature="n#!!block;n#getTopRatedMovies#0" />
             <element signature="n#!!block;n#addMovies#0" />
+            <element signature="n#!!block;n#getUpcomingMovies#0" />
+            <element signature="n#!!block;n#standardMoiveBody#0" />
           </folding>
         </state>
       </provider>
@@ -589,11 +607,17 @@
         <state relative-caret-position="2788">
           <caret line="164" column="8" selection-start-line="164" selection-start-column="8" selection-end-line="164" selection-end-column="8" />
           <folding>
+            <element signature="e#484#920#0" />
+            <element signature="e#950#1136#0" />
+            <element signature="e#1359#2488#0" />
             <element signature="n#!!block;n#renderMovies#0" />
+            <element signature="n#!!block;n#doSearch#0" />
             <element signature="n#!!block;n#doSearchForGenres#0" />
             <element signature="n#!!block;n#showDetails#0" />
             <element signature="n#!!block;n#getTopRatedMovies#0" />
             <element signature="n#!!block;n#addMovies#0" />
+            <element signature="n#!!block;n#getUpcomingMovies#0" />
+            <element signature="n#!!block;n#standardMoiveBody#0" />
           </folding>
         </state>
       </provider>
@@ -652,11 +676,17 @@
         <state relative-caret-position="255">
           <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
           <folding>
+            <element signature="e#484#920#0" />
+            <element signature="e#950#1136#0" />
+            <element signature="e#1359#2488#0" />
             <element signature="n#!!block;n#renderMovies#0" />
+            <element signature="n#!!block;n#doSearch#0" />
             <element signature="n#!!block;n#doSearchForGenres#0" />
             <element signature="n#!!block;n#showDetails#0" />
             <element signature="n#!!block;n#getTopRatedMovies#0" />
             <element signature="n#!!block;n#addMovies#0" />
+            <element signature="n#!!block;n#getUpcomingMovies#0" />
+            <element signature="n#!!block;n#standardMoiveBody#0" />
           </folding>
         </state>
       </provider>
@@ -701,11 +731,17 @@
         <state relative-caret-position="119">
           <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
+            <element signature="e#484#920#0" />
+            <element signature="e#950#1136#0" />
+            <element signature="e#1359#2488#0" />
             <element signature="n#!!block;n#renderMovies#0" />
+            <element signature="n#!!block;n#doSearch#0" />
             <element signature="n#!!block;n#doSearchForGenres#0" />
             <element signature="n#!!block;n#showDetails#0" />
             <element signature="n#!!block;n#getTopRatedMovies#0" />
             <element signature="n#!!block;n#addMovies#0" />
+            <element signature="n#!!block;n#getUpcomingMovies#0" />
+            <element signature="n#!!block;n#standardMoiveBody#0" />
           </folding>
         </state>
       </provider>
@@ -737,11 +773,17 @@
         <state relative-caret-position="238">
           <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
           <folding>
+            <element signature="e#484#920#0" />
+            <element signature="e#950#1136#0" />
+            <element signature="e#1359#2488#0" />
             <element signature="n#!!block;n#renderMovies#0" />
+            <element signature="n#!!block;n#doSearch#0" />
             <element signature="n#!!block;n#doSearchForGenres#0" />
             <element signature="n#!!block;n#showDetails#0" />
             <element signature="n#!!block;n#getTopRatedMovies#0" />
             <element signature="n#!!block;n#addMovies#0" />
+            <element signature="n#!!block;n#getUpcomingMovies#0" />
+            <element signature="n#!!block;n#standardMoiveBody#0" />
           </folding>
         </state>
       </provider>
@@ -841,27 +883,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="41" column="70" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="70" />
-          <folding>
-            <element signature="n#!!block;n#renderMovies#0" />
-            <element signature="n#!!block;n#doSearchForGenres#0" />
-            <element signature="n#!!block;n#showDetails#0" />
-            <element signature="n#!!block;n#getTopRatedMovies#0" />
-            <element signature="n#!!block;n#addMovies#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/constants.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -871,7 +892,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/todo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
+        <state relative-caret-position="799">
           <caret line="47" column="76" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="76" />
         </state>
       </provider>
@@ -885,8 +906,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/movie-model.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+        <state relative-caret-position="153">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="87" column="30" lean-forward="true" selection-start-line="87" selection-start-column="30" selection-end-line="87" selection-end-column="30" />
+          <folding>
+            <element signature="e#484#920#0" />
+            <element signature="e#950#1136#0" />
+            <element signature="e#1359#2488#0" />
+            <element signature="n#!!block;n#renderMovies#0" />
+            <element signature="n#!!block;n#doSearch#0" />
+            <element signature="n#!!block;n#doSearchForGenres#0" />
+            <element signature="n#!!block;n#showDetails#0" />
+            <element signature="n#!!block;n#getTopRatedMovies#0" />
+            <element signature="n#!!block;n#addMovies#0" />
+            <element signature="n#!!block;n#getUpcomingMovies#0" />
+            <element signature="n#!!block;n#standardMoiveBody#0" />
+          </folding>
         </state>
       </provider>
     </entry>
