@@ -72,18 +72,32 @@ route('upcoming', function () {
 route('showhistory', function () {
     $('#content').empty();
     $('<h1>').appendTo('#content').text('Movie search history');
-    $('<div>').appendTo('#content').text('totalResults descending');
+    //$('<div>').appendTo('#content').text('totalResults descending');
+    $('<button>').appendTo('#content').html('total Results descending'  ).on('click', () => { getMovieSearchHistory('http://localhost:3000/movie/query/sort/totalresults/desc')});
+    $('<button>').appendTo('#content').html('totalR esults ascending'   ).on('click', () => { getMovieSearchHistory('http://localhost:3000/movie/query/sort/totalresults/asc')});
+    $('<button>').appendTo('#content').html('Search Date descending'    ).on('click', () => { getMovieSearchHistory('http://localhost:3000/movie/query/sort/totalresults/date/desc')});
+    $('<button>').appendTo('#content').html('Search Date ascending'     ).on('click', () => { getMovieSearchHistory('http://localhost:3000/movie/query/sort/totalresults/date/asc')});
+
     $('<table>').appendTo('#content').addClass('table table-striped').attr('id', 'searchHistory');
     $('<thead>').appendTo('#searchHistory').html('<tr><th scope=\'col\'>Search</th><th scope=\'col\'>Total Results</th><th scope=\'col\'>Search Date / Time</th></tr>');
     $('<tbody>').appendTo('#searchHistory').attr('id', 'searchHistoryBody');
 
+    /*
+    var url = 'http://localhost:3000/movie/query/sort/totalresults';
 
-    fetch('http://localhost:3000/movie/query/sort/totalresults', {
+    getMovieSearchHistory(url);
+    */
+});
+
+function getMovieSearchHistory(url : string){
+    $('#searchHistoryBody').empty();
+    fetch(url, {
         method: 'get'
     }).then((response) => {
         //console.log(response.json());
         return response.json();
     }).then((responses) => {
+
         for (const response of responses) { // Going over the results
             console.log(response.searchString);
             var title = response.searchString;
@@ -95,8 +109,7 @@ route('showhistory', function () {
     }).catch((err) => {
         console.log(err);
     });
-
-});
+}
 
 $(model).on('modelchange', () => {
     renderMovies();
