@@ -69,31 +69,33 @@ route('upcoming', function () {
     getUpcomingMovies();
 });
 
-route('example', function () {
+route('showhistory', function () {
     $('#content').empty();
-    $('<h1>').appendTo('#content').text('example');
-    standardMoiveBody();
-    var data = {searchString: 'b'};
-    var url = 'http://localhost:3000/';
-    var destiny = 'moviesearchquery';
-    postData(url, destiny , data);
-    /*
-    fetch('http://localhost:3000/sample', {
-        method: 'post',
-        body: JSON.stringify(data),
-        headers: new Headers({
-            'Content-Type': 'application/json'
-        })
+    $('<h1>').appendTo('#content').text('Movie search history');
+    $('<div>').appendTo('#content').text('totalResults descending');
+    $('<table>').appendTo('#content').addClass('table table-striped').attr('id', 'searchHistory');
+    $('<thead>').appendTo('#searchHistory').html('<tr><th scope=\'col\'>Search</th><th scope=\'col\'>Total Results</th><th scope=\'col\'>Search Date / Time</th></tr>');
+    $('<tbody>').appendTo('#searchHistory').attr('id', 'searchHistoryBody');
+
+
+    fetch('http://localhost:3000/movie/query/sort/totalresults', {
+        method: 'get'
     }).then((response) => {
-        console.log(response);
+        //console.log(response.json());
         return response.json();
-    }).then(re => {
-        for (const movie of re.results) { // Going over the results
-            $('<div>').appendTo('#content').text( movie.message);
-        }}).catch((err) => {
+    }).then((responses) => {
+        for (const response of responses) { // Going over the results
+            console.log(response.searchString);
+            var title = response.searchString;
+            var total = response.totalResults;
+            var date = new Date(response.ts);
+            var dateString = date.toLocaleString();
+            $('<tr>').appendTo('#searchHistoryBody').html('<th scope=\'row\'>'+title +'</th><td>'+total+'</td><td>' + dateString + '</td>');
+        }
+    }).catch((err) => {
         console.log(err);
     });
-    */
+
 });
 
 $(model).on('modelchange', () => {
@@ -123,6 +125,17 @@ function doSearch() {
     const currentPage = 1;
     const url = 'https://api.themoviedb.org/3/search/movie?api_key=' + apiKey + '&language=en-US&query=' + searchQuery + '&page=' + currentPage + '&include_adult=false';
     addMovies(url);
+    fetch(url, {
+        method: 'get'
+    }).then((response) => {
+        //console.log(response.json());
+        return response.json();
+    }).then(result => {
+         console.log(result.total_results);
+         postData('http://localhost:3000/', 'moviesearchquery' , {searchQuery: searchQuery, totalResults: result.total_results});
+    }).catch((err) => {
+        console.log(err);
+    });
 }
 
 function doSearchForGenres(parameters: { genreID: any }) {
@@ -162,14 +175,6 @@ function getTopRatedMovies() {
 
 function addMovies(url: string) {
     model.resetMovieList();
-    /*
-    $.get(url, function (data) { // URL with movies that meet the search criteria
-        const movies = data.results;
-        for (const movie of movies) { // Going over the results
-            model.addMovie(movie); // Add every movie to the model
-        }
-    });
-    */
     fetch(url, {
         method: 'get'
     }).then((response) => {
@@ -197,7 +202,7 @@ function standardMoiveBody() {
 }
 
 function postData(url : string, destiny : string , data : any){
-    console.log(url + destiny);
+    //console.log(url + destiny);
     fetch(url +''+ destiny,
         {
         method: 'post',
@@ -208,6 +213,22 @@ function postData(url : string, destiny : string , data : any){
     }).then((response) => {
         console.log(response);
         //return response.json();
+    }).catch((err) => {
+        console.log(err);
+    });
+}
+
+function getData(url : string, destiny : string){
+
+    fetch(url +''+ destiny, {
+        method: 'get'
+    }).then((response) => {
+        //console.log(response.json());
+        return response.json();
+    }).then((responses) => {
+        for (const response of responses) { // Going over the results
+            console.log(response.searchString);
+        }
     }).catch((err) => {
         console.log(err);
     });
