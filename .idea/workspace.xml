@@ -23,8 +23,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+            <state relative-caret-position="408">
+              <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -32,21 +32,19 @@
       <file leaf-file-name="app.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/app.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="87" column="47" lean-forward="true" selection-start-line="87" selection-start-column="47" selection-end-line="87" selection-end-column="47" />
+            <state relative-caret-position="519">
+              <caret line="126" column="1" lean-forward="true" selection-start-line="126" selection-start-column="1" selection-end-line="126" selection-end-column="1" />
               <folding>
-                <element signature="e#484#920#0" />
                 <element signature="e#950#1136#0" />
+                <element signature="n#!!block;n#getMovieSearchHistory#0" />
+                <element signature="n#!!block;n#getfavoriteMovies#0" />
                 <element signature="n#!!block;n#renderMovies#0" />
-                <element signature="e#4009#4038#0" />
-                <element signature="n#!!block;n#doSearchForGenres#0" />
+                <element signature="e#6550#6579#0" />
                 <element signature="n#!!block;n#showDetails#0" />
+                <element signature="e#7920#8145#0" />
                 <element signature="n#!!block;n#getTopRatedMovies#0" />
-                <element signature="n#!!block;n#addMovies#0" />
-                <element signature="n#!!block;n#getUpcomingMovies#0" />
-                <element signature="n#!!block;n#standardMoiveBody#0" />
                 <element signature="n#!!block;n#postData#0" />
-                <element signature="n#!!block;n#postData#1" />
+                <element signature="n#!!block;n#getData#0" />
               </folding>
             </state>
           </provider>
@@ -64,8 +62,8 @@
       <file leaf-file-name="todo.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/todo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+            <state relative-caret-position="356">
+              <caret line="24" column="95" selection-start-line="24" selection-start-column="95" selection-end-line="24" selection-end-column="95" />
             </state>
           </provider>
         </entry>
@@ -73,8 +71,8 @@
       <file leaf-file-name="Movie.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/Movie.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="18" selection-end-column="1" />
+            <state relative-caret-position="306">
+              <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -92,7 +90,7 @@
         <entry file="file://$PROJECT_DIR$/src/app/movie-model.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -111,7 +109,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>var i</find>
       <find>getMoviesQuery</find>
       <find>scr</find>
       <find>scrip</find>
@@ -132,7 +129,6 @@
       <find>route</find>
       <find>title</find>
       <find>movie.id</find>
-      <find>showDetails</find>
       <find>css</find>
       <find>on</find>
       <find>on(</find>
@@ -141,6 +137,8 @@
       <find>addClass</find>
       <find>boot</find>
       <find>postData</find>
+      <find>getMovieSearchHistory</find>
+      <find>showDetails</find>
     </findStrings>
     <replaceStrings>
       <replace>url</replace>
@@ -176,8 +174,8 @@
         <option value="$PROJECT_DIR$/src/app/movie-model.ts" />
         <option value="$PROJECT_DIR$/test/model.test.js" />
         <option value="$PROJECT_DIR$/src/css/index.css" />
-        <option value="$PROJECT_DIR$/todo.html" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/todo.html" />
         <option value="$PROJECT_DIR$/src/app/app.ts" />
       </list>
     </option>
@@ -199,17 +197,17 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="2553" />
-    <option name="width" value="1699" />
-    <option name="height" value="1407" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="2576" />
+    <option name="height" value="1416" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -232,6 +230,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -371,7 +370,10 @@
       <workItem from="1523266178050" duration="17801000" />
       <workItem from="1523376883311" duration="7086000" />
       <workItem from="1523389614120" duration="3957000" />
-      <workItem from="1523890708385" duration="14961000" />
+      <workItem from="1523890708385" duration="16461000" />
+      <workItem from="1523978422868" duration="2016000" />
+      <workItem from="1523982043344" duration="28000" />
+      <workItem from="1524308911354" duration="4690000" />
     </task>
     <task id="LOCAL-00001" summary="Next Button">
       <created>1520245334245</created>
@@ -471,7 +473,21 @@
       <option name="project" value="LOCAL" />
       <updated>1523900651620</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="search History prototyp working">
+      <created>1523911939123</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1523911939123</updated>
+    </task>
+    <task id="LOCAL-00016" summary="added History buttons desc asc">
+      <created>1523913250500</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1523913250500</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -489,7 +505,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202086000" />
+    <option name="totallyTimeSpent" value="210320000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -501,17 +517,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2553" y="0" width="1699" height="1407" extended-state="0" />
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="17" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.7890499" visible="true" weight="0.102347985" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.7890499" visible="true" weight="0.14933018" />
       <window_info anchor="bottom" id="TODO" order="12" weight="0.32934782" />
       <window_info anchor="bottom" id="Docker" order="17" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.50105375" side_tool="true" weight="0.32792208" />
-      <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.4926238" weight="0.32900432" />
       <window_info id="npm" order="5" sideWeight="0.21095008" side_tool="true" weight="0.18229716" />
-      <window_info active="true" anchor="bottom" id="Run" order="4" sideWeight="0.65173864" visible="true" weight="0.3254902" />
+      <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.4926238" weight="0.32900432" />
+      <window_info active="true" anchor="bottom" id="Run" order="4" sideWeight="0.65173864" visible="true" weight="0.2453271" />
       <window_info id="Structure" order="3" sideWeight="0.49434572" side_tool="true" weight="0.24973656" />
       <window_info anchor="bottom" id="Terminal" order="16" sideWeight="0.4910432" weight="0.3300866" />
       <window_info id="Favorites" order="6" side_tool="true" />
@@ -526,11 +542,11 @@
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49841937" weight="0.32900432" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4926238" weight="0.32900432" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info id="npm" order="2" sideWeight="0.21095008" side_tool="true" visible="true" weight="0.18229716" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7890499" visible="true" weight="0.18229716" />
       <window_info id="Structure" order="1" sideWeight="0.49434572" side_tool="true" weight="0.24973656" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -538,12 +554,12 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32934782" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.65173864" weight="0.32575756" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49841937" weight="0.32900432" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39935064" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4910432" weight="0.3300866" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50105375" side_tool="true" visible="true" weight="0.32792208" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49841937" weight="0.32900432" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4926238" weight="0.32900432" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info active="true" anchor="bottom" id="Messages" order="7" sideWeight="0.49894625" visible="true" weight="0.32792208" />
       <window_info id="Favorites" order="3" side_tool="true" />
     </layout-to-restore>
@@ -578,19 +594,13 @@
     <MESSAGE value="removed some html an added the it as &quot;JavaScript&quot;" />
     <MESSAGE value="added MongoDB" />
     <MESSAGE value="added Post request" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Post request" />
+    <MESSAGE value="search History prototyp working" />
+    <MESSAGE value="added History buttons desc asc" />
+    <option name="LAST_COMMIT_MESSAGE" value="added History buttons desc asc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/app/app.ts</url>
-          <line>39</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -599,18 +609,16 @@
         <state relative-caret-position="1581">
           <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
           <folding>
-            <element signature="e#484#920#0" />
             <element signature="e#950#1136#0" />
+            <element signature="n#!!block;n#getMovieSearchHistory#0" />
+            <element signature="n#!!block;n#getfavoriteMovies#0" />
             <element signature="n#!!block;n#renderMovies#0" />
-            <element signature="e#4009#4038#0" />
-            <element signature="n#!!block;n#doSearchForGenres#0" />
+            <element signature="e#6550#6579#0" />
             <element signature="n#!!block;n#showDetails#0" />
+            <element signature="e#7920#8145#0" />
             <element signature="n#!!block;n#getTopRatedMovies#0" />
-            <element signature="n#!!block;n#addMovies#0" />
-            <element signature="n#!!block;n#getUpcomingMovies#0" />
-            <element signature="n#!!block;n#standardMoiveBody#0" />
             <element signature="n#!!block;n#postData#0" />
-            <element signature="n#!!block;n#postData#1" />
+            <element signature="n#!!block;n#getData#0" />
           </folding>
         </state>
       </provider>
@@ -627,18 +635,16 @@
         <state relative-caret-position="2788">
           <caret line="164" column="8" selection-start-line="164" selection-start-column="8" selection-end-line="164" selection-end-column="8" />
           <folding>
-            <element signature="e#484#920#0" />
             <element signature="e#950#1136#0" />
+            <element signature="n#!!block;n#getMovieSearchHistory#0" />
+            <element signature="n#!!block;n#getfavoriteMovies#0" />
             <element signature="n#!!block;n#renderMovies#0" />
-            <element signature="e#4009#4038#0" />
-            <element signature="n#!!block;n#doSearchForGenres#0" />
+            <element signature="e#6550#6579#0" />
             <element signature="n#!!block;n#showDetails#0" />
+            <element signature="e#7920#8145#0" />
             <element signature="n#!!block;n#getTopRatedMovies#0" />
-            <element signature="n#!!block;n#addMovies#0" />
-            <element signature="n#!!block;n#getUpcomingMovies#0" />
-            <element signature="n#!!block;n#standardMoiveBody#0" />
             <element signature="n#!!block;n#postData#0" />
-            <element signature="n#!!block;n#postData#1" />
+            <element signature="n#!!block;n#getData#0" />
           </folding>
         </state>
       </provider>
@@ -697,18 +703,16 @@
         <state relative-caret-position="255">
           <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
           <folding>
-            <element signature="e#484#920#0" />
             <element signature="e#950#1136#0" />
+            <element signature="n#!!block;n#getMovieSearchHistory#0" />
+            <element signature="n#!!block;n#getfavoriteMovies#0" />
             <element signature="n#!!block;n#renderMovies#0" />
-            <element signature="e#4009#4038#0" />
-            <element signature="n#!!block;n#doSearchForGenres#0" />
+            <element signature="e#6550#6579#0" />
             <element signature="n#!!block;n#showDetails#0" />
+            <element signature="e#7920#8145#0" />
             <element signature="n#!!block;n#getTopRatedMovies#0" />
-            <element signature="n#!!block;n#addMovies#0" />
-            <element signature="n#!!block;n#getUpcomingMovies#0" />
-            <element signature="n#!!block;n#standardMoiveBody#0" />
             <element signature="n#!!block;n#postData#0" />
-            <element signature="n#!!block;n#postData#1" />
+            <element signature="n#!!block;n#getData#0" />
           </folding>
         </state>
       </provider>
@@ -753,18 +757,16 @@
         <state relative-caret-position="119">
           <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
-            <element signature="e#484#920#0" />
             <element signature="e#950#1136#0" />
+            <element signature="n#!!block;n#getMovieSearchHistory#0" />
+            <element signature="n#!!block;n#getfavoriteMovies#0" />
             <element signature="n#!!block;n#renderMovies#0" />
-            <element signature="e#4009#4038#0" />
-            <element signature="n#!!block;n#doSearchForGenres#0" />
+            <element signature="e#6550#6579#0" />
             <element signature="n#!!block;n#showDetails#0" />
+            <element signature="e#7920#8145#0" />
             <element signature="n#!!block;n#getTopRatedMovies#0" />
-            <element signature="n#!!block;n#addMovies#0" />
-            <element signature="n#!!block;n#getUpcomingMovies#0" />
-            <element signature="n#!!block;n#standardMoiveBody#0" />
             <element signature="n#!!block;n#postData#0" />
-            <element signature="n#!!block;n#postData#1" />
+            <element signature="n#!!block;n#getData#0" />
           </folding>
         </state>
       </provider>
@@ -796,18 +798,16 @@
         <state relative-caret-position="238">
           <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
           <folding>
-            <element signature="e#484#920#0" />
             <element signature="e#950#1136#0" />
+            <element signature="n#!!block;n#getMovieSearchHistory#0" />
+            <element signature="n#!!block;n#getfavoriteMovies#0" />
             <element signature="n#!!block;n#renderMovies#0" />
-            <element signature="e#4009#4038#0" />
-            <element signature="n#!!block;n#doSearchForGenres#0" />
+            <element signature="e#6550#6579#0" />
             <element signature="n#!!block;n#showDetails#0" />
+            <element signature="e#7920#8145#0" />
             <element signature="n#!!block;n#getTopRatedMovies#0" />
-            <element signature="n#!!block;n#addMovies#0" />
-            <element signature="n#!!block;n#getUpcomingMovies#0" />
-            <element signature="n#!!block;n#standardMoiveBody#0" />
             <element signature="n#!!block;n#postData#0" />
-            <element signature="n#!!block;n#postData#1" />
+            <element signature="n#!!block;n#getData#0" />
           </folding>
         </state>
       </provider>
@@ -907,20 +907,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Movie.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="18" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/movie-model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="986">
@@ -928,37 +914,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/todo.html">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        <state relative-caret-position="408">
+          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/todo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+        <state relative-caret-position="356">
+          <caret line="24" column="95" selection-start-line="24" selection-start-column="95" selection-end-line="24" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/movie-model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Movie.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/app.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="87" column="47" lean-forward="true" selection-start-line="87" selection-start-column="47" selection-end-line="87" selection-end-column="47" />
+        <state relative-caret-position="519">
+          <caret line="126" column="1" lean-forward="true" selection-start-line="126" selection-start-column="1" selection-end-line="126" selection-end-column="1" />
           <folding>
-            <element signature="e#484#920#0" />
             <element signature="e#950#1136#0" />
+            <element signature="n#!!block;n#getMovieSearchHistory#0" />
+            <element signature="n#!!block;n#getfavoriteMovies#0" />
             <element signature="n#!!block;n#renderMovies#0" />
-            <element signature="e#4009#4038#0" />
-            <element signature="n#!!block;n#doSearchForGenres#0" />
+            <element signature="e#6550#6579#0" />
             <element signature="n#!!block;n#showDetails#0" />
+            <element signature="e#7920#8145#0" />
             <element signature="n#!!block;n#getTopRatedMovies#0" />
-            <element signature="n#!!block;n#addMovies#0" />
-            <element signature="n#!!block;n#getUpcomingMovies#0" />
-            <element signature="n#!!block;n#standardMoiveBody#0" />
             <element signature="n#!!block;n#postData#0" />
-            <element signature="n#!!block;n#postData#1" />
+            <element signature="n#!!block;n#getData#0" />
           </folding>
         </state>
       </provider>
