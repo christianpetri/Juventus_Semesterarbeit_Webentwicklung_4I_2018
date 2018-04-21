@@ -3,7 +3,7 @@ import 'bootstrap';
 import 'less';
 import 'riot-route';
 import route from 'riot-route';
-import {apiKey} from './constants';
+import {apiKey , databaseURL} from './constants';
 import '../css/index.css';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../img/logo_tmdb.png';
@@ -204,6 +204,41 @@ function showDetails(movie: Movie) {
         .text( movie.title )
         .append( $( '<small>' )
             .text( ' ' + movie.release_date.substring( 0 , 4 ) ) ).addClass( 'media-heading' );
+    $( '<div>' ).appendTo( '#resultMovieListDetail' )
+        .attr( 'id' , 'favButton' ).addClass( 'glyphicon glyphicon-heart x1' );
+
+      movieIsFavorite(movie.id).then(responseData => {
+    if(responseData.answer){
+        console.log("true");
+       $( '#favButton' )
+            .css( 'color' , 'red' )
+           .attr('title','Remove as a favorite')
+            .on( 'click' , () => {
+                postData( 'http://localhost:3000/' , 'moviefavorite/remove' , {movieID: movie.id} );
+                $('#favButton').empty();
+                $( '<span>' ).appendTo( '#favButton' ).text( ' removed!' ).attr('id','favButtonFade');
+                $('#favButtonFade').fadeOut(1000)
+                $( '#favButton' ).css( 'color' , 'black').attr('title','Add as a favorite')
+                    .on('click', ()=> {
+
+                    });
+
+            } );
+    } else {
+        console.log("false");
+        $('#favButton' )
+            .attr('title','Add as a favorite')
+            .on( 'click' , () => {
+                postData( 'http://localhost:3000/' , 'moviefavorite/add' , {movieID: movie.id} );
+                $('#favButton').empty();
+                $( '<span>' ).appendTo( '#favButton' ).text( ' added!' ).attr('id','favButtonFade');
+                $('#favButtonFade').fadeOut(1000);
+                $( '#favButton' ).css( 'color' , 'red' ).attr('title','Remove as a favorite');
+
+            } );
+    }}
+);
+
     $( '<div>' ).appendTo( '#resultMovieListDetail' ).text( movie.overview );
     if (movie.backdrop_path !== null) {
         $( '<img>' , {
@@ -213,6 +248,18 @@ function showDetails(movie: Movie) {
     } else {
         $( '<div>' ).appendTo( '#resultMovieListDetail' ).text( 'No Image found' ).css( 'padding-top' , '10px' );
     }
+}
+
+function movieIsFavorite(id: any) : any {
+    let url = databaseURL + 'ismovieafavorite?movieID=' + id;
+    return fetch( url , {
+        method: 'get'
+    } ).then((response) => response.json())
+        .then((responseData) => {
+            //console.warn(responseData);
+            return responseData;
+        })
+        .catch(error => console.warn(error));
 }
 
 //https://api.themoviedb.org/3/movie/top_rated?api_key=<<api_key>>&language=en-US&page=1
