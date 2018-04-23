@@ -13,48 +13,59 @@ import any = jasmine.any;
 
 let model = new DefaultMovieModel();
 
-
 route( '/' , function () {
     $( '#content' ).empty();
-    $( '<h1>' ).appendTo( '#content' ).text( 'Search Movie Database' );
-    $( '<input type="text">' ).appendTo( '#content' ).attr( 'id' , 'searchQueryInput' );
-    $( '<button>' ).appendTo( '#content' )
+    standardMovieBody('Search');
+    //$( '<h1>' ).appendTo( '#content' ).text( 'Search' ).addClass( 'col-sm-2 list-group' );
+    $( '<input type="text">' ).appendTo( '#searchMovieTitle' ).attr( 'id' , 'searchQueryInput' );
+    $( '<button>' ).appendTo( '#searchMovieTitle' )
         .addClass( 'btn btn-primary btn-sm' )
         .text( ' Search the Movie Database ' )
         .on( 'click' , () => {
             doSearch()
         } );
-    //'<div id="moviePageNavigation"></div>'
-    standardMoiveBody();
+
 } );
 
 route( '/top' , function () {
     $( '#content' ).empty();
-    //'<div id="moviePageNavigation"></div>'
-    $( '<h1>' ).appendTo( '#content' ).text( 'Top Rated Movies' );
-    standardMoiveBody();
+    standardMovieBody('Top Rated Movies');
     getTopRatedMovies();
 } );
 
 //https://api.themoviedb.org/3/discover/movie?api_key=84b8bbc00a5c8c683ef60c5709687388&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=12
 route( '/topgenre' , function () {
     $( '#content' ).empty();
-    $( '<h1>' ).appendTo( '#content' ).text( 'Top Rated Movies by Genres' );
-    $( '<div>' ).appendTo( '#content' ).attr( 'id' , 'genres' ).addClass( 'col-sm-2 list-group' );
-    $( '<div>' ).appendTo( '#content' ).attr( 'id' , 'resultMovieList' ).addClass( 'col-sm-4' );
-    $( '<div>' ).appendTo( '#content' ).attr( 'id' , 'resultMovieListDetail' ).addClass( 'col-sm-5' );
-    $( '#genres,#resultMovieList,#resultMovieListDetail' ).wrapAll( '<div>' ).addClass( 'row' );
+    $('<div>').appendTo('#content').addClass('row').attr('id', 'mainGridBody');
+    $('<div>').appendTo('#mainGridBody').addClass( 'col-sm-5' ).attr('id','leftSide');
+    $('<div>').appendTo('#leftSide').addClass('row').attr('id','nestedSequence');
+    $( '<div>' ).appendTo( '#nestedSequence' ).attr( 'id' , 'genres' ).addClass( 'col-md-4' );
+    $( '<h1>' ).appendTo( '#genres' ).text( 'Genre' ).addClass('media-heading');
+    $( '<span>' ).appendTo( '#nestedSequence' ).attr('id','titleTopMovies');
+    $('<div>').appendTo('#nestedSequence').attr( 'id' , 'resultMovieList' ).addClass( 'col-md-8' );
+    $( '<div>' ).appendTo( '#mainGridBody' ).attr( 'id' , 'resultMovieListDetail' ).addClass( 'col-md-7' );
+
+
+
+
+    //$( '<div>' ).appendTo( '#mainGridBody' ).attr( 'id' , 'genres' ).addClass( 'col-sm-2 list-group' );
+    //$( '<h1>' ).appendTo( '#genres' ).text( 'Genre' ).addClass('media-heading');
+    //$( '<div>' ).appendTo( '#content' ).attr( 'id' , 'resultMovieList' ).addClass( 'col-sm-4' );
+    //$( '<div>' ).appendTo( '#content' ).attr( 'id' , 'resultMovieListDetail' ).addClass( 'col-sm-5' );
+    //$( '#genres,#resultMovieList,#resultMovieListDetail' ).wrapAll( '<div>' ).addClass( 'row' );
+
     const url = 'https://api.themoviedb.org/3/genre/movie/list?api_key=' + apiKey + '&language=en-US';
     $.get( url , function (data) { // URL with movies that meet the search criteria
         const genre = data.genres;
+
         for (let i = 0; i < genre.length; i++) {
             const genreID: number = genre[i].id;
             $( '<div>' ).appendTo( '#genres' )
-                .html( genre[i].name )
-                .addClass( 'list-group-item' )
-                .css( 'margin-right' , '10px' )
-                .css( 'margin-left' , '15px' )
+                .text( genre[i].name )
+                .addClass('movie-list-item')
                 .on( 'click' , () => {
+                    $('#titleTopMovies').empty();
+                    $( '<h1>' ).appendTo( '#titleTopMovies' ).text( 'Top Movies' ).addClass('media-heading');
                     doSearchForGenres( {genreID: genreID} )
                 } );
         }
@@ -64,8 +75,8 @@ route( '/topgenre' , function () {
 //https://api.themoviedb.org/3/movie/upcoming?api_key=<<api_key>>&language=en-US&page=1
 route( 'upcoming' , function () {
     $( '#content' ).empty();
-    $( '<h1>' ).appendTo( '#content' ).text( 'Upcoming Movies' );
-    standardMoiveBody();
+    //$( '<h1>' ).appendTo( '#content' ).text( '' );
+    standardMovieBody('Upcoming Movies');
     getUpcomingMovies();
 } );
 
@@ -73,16 +84,16 @@ route( 'showhistory' , function () {
     $( '#content' ).empty();
     $( '<h1>' ).appendTo( '#content' ).text( 'Movie search history' );
     //$('<div>').appendTo('#content').text('totalResults descending');
-    $( '<button>' ).appendTo( '#content' ).html( 'total Results descending' ).on( 'click' , () => {
+    $( '<span>' ).appendTo( '#content' ).html( 'total Results descending ' ).addClass('movie-list-item').css('margin-right','15px').on( 'click' , () => {
         getMovieSearchHistory( 'http://localhost:3000/movie/query/sort/totalresults/desc' )
     } );
-    $( '<button>' ).appendTo( '#content' ).html( 'total Results ascending' ).on( 'click' , () => {
+    $( '<span>' ).appendTo( '#content' ).html( 'total Results ascending ' ).css('margin-right','15px').on( 'click' , () => {
         getMovieSearchHistory( 'http://localhost:3000/movie/query/sort/totalresults/asc' )
     } );
-    $( '<button>' ).appendTo( '#content' ).html( 'Search Date descending' ).on( 'click' , () => {
+    $( '<span>' ).appendTo( '#content' ).html( 'Search Date descending ' ).addClass('movie-list-item').css('margin-right','15px').on( 'click' , () => {
         getMovieSearchHistory( 'http://localhost:3000/movie/query/sort/date/desc' )
     } );
-    $( '<button>' ).appendTo( '#content' ).html( 'Search Date ascending' ).on( 'click' , () => {
+    $( '<span>' ).appendTo( '#content' ).html( 'Search Date ascending' ).addClass('movie-list-item').css('margin-right','15px').on( 'click' , () => {
         getMovieSearchHistory( 'http://localhost:3000/movie/query/sort/date/asc' )
     } );
     //get last 5 search results
@@ -98,11 +109,17 @@ route( 'showhistory' , function () {
 
 route( 'favoriteMovie' , function () {
     $( '#content' ).empty();
-    $( '<h1>' ).appendTo( '#content' ).text( 'Favorite Movie' );
-    standardMoiveBody();
-    getfavoriteMovies( 'http://localhost:3000/favorite' );
+    //$( '<h1>' ).appendTo( '#content' ).text( 'Favorite Movie' );
+    standardMovieBody('Favorite Movie');
+    getfavoriteMovies( 'http://localhost:3000/moviefavorite' );
 
 } );
+
+route('test', function (){
+    $('#content').empty();
+
+
+});
 
 function getMovieSearchHistory(url: string) {
     $( '#searchHistoryBody' ).empty();
@@ -149,8 +166,7 @@ $( model ).on( 'modelchange' , () => {
 } );
 
 function renderMovies() {
-    const $resultList = $( '#resultMovieList' );
-    $resultList.html( '' );
+    $( '#resultMovieList' ).empty();
     for (const movie of model.movieList) { // Alle Filme im Model
         $( '<div>' ) // anzeigen
             .appendTo( '#resultMovieList' )
@@ -159,9 +175,8 @@ function renderMovies() {
             .on( 'click' , () => {
                 showDetails( model.getMovie( movie.id ) )
             } )
-            .addClass( 'list-group-item' )
-            .css( 'margin-left' , '15px' )
-            .css( 'margin-right' , '20px' );
+            //.addClass( 'list-group-item' )
+            .addClass('movie-list-item');
     }
 }
 
@@ -177,8 +192,7 @@ function doSearch() {
         //console.log(response.json());
         return response.json();
     } ).then( result => {
-        //console.log(result.total_results);
-        postData( 'http://localhost:3000/' , 'moviesearchquery' , {
+        postData('moviesearchquery' , {
             searchQuery: searchQuery ,
             totalResults: result.total_results
         } );
@@ -190,15 +204,15 @@ function doSearch() {
 function doSearchForGenres(parameters: { genreID: any }) {
     let genreID = parameters.genreID;
     model.resetMovieList();
-    $( '#resultMovieListDetail' ).html( '' );
+    $( '#resultMovieListDetail' ).empty();
+    $('<h1>').appendTo('#resultMovieList').text( 'Genre').addClass('media-heading');
     ////https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=12
     const url = 'https://api.themoviedb.org/3/discover/movie?&api_key=' + apiKey + '&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=' + genreID;
     addMovies( url );
 }
 
 function showDetails(movie: Movie) {
-    const resultMovieListDetail = $( '#resultMovieListDetail' );
-    resultMovieListDetail.html( '' );
+    $( '#resultMovieListDetail' ).empty();
     $( '<h1>' )
         .appendTo( '#resultMovieListDetail' )
         .text( movie.title )
@@ -209,26 +223,35 @@ function showDetails(movie: Movie) {
     $( '<div>' )
         .appendTo( '#resultMovieListDetail' )
         .attr( 'id' , 'favButton' )
-        .addClass( 'glyphicon glyphicon-heart x1')
+        .addClass( 'glyphicon glyphicon-heart x1' )
+        .css( 'color' , 'grey' )
         .attr( 'title' , 'Add as a favorite Movie' )
-        .on('click',()=>{
-            if(isAFavoriteMovie){
-                removeMovieFromFavoriteList(movie.id);
+        .on( 'click' , () => {
+            if (isAFavoriteMovie) {
+                removeMovieFromFavoriteList( movie.id );
                 isAFavoriteMovie = false;
-            } else{
-                addMovieToFavoriteList(movie.id);
+            } else {
+                addMovieToFavoriteList( movie.id );
                 isAFavoriteMovie = true;
             }
-        });
+        } );
     movieIsFavorite( movie.id ).then( responseData => {
             if (responseData.answer) {
                 isAFavoriteMovie = true;
                 $( '#favButton' )
                     .css( 'color' , 'red' )
                     .attr( 'title' , 'Remove as a favorite Movie' );
+            } else {
+                $( '#favButton' )
+                    .css( 'color' , 'black' );
             }
         }
     );
+    /*
+    this.vote_average = vote_average;
+        this.vote_count = vote_count;
+    */
+    $( '<div>' ).appendTo( '#resultMovieListDetail' ).text( 'vote average ' + movie.vote_average + ' vote count '+ movie.vote_count );
     $( '<div>' ).appendTo( '#resultMovieListDetail' ).text( movie.overview );
     if (movie.backdrop_path !== null) {
         $( '<img>' , {
@@ -241,16 +264,17 @@ function showDetails(movie: Movie) {
 }
 
 
-function removeMovieFromFavoriteList ( id : any) {
-    postData( 'http://localhost:3000/' , 'moviefavorite/remove' , {movieID: id} );
+function removeMovieFromFavoriteList(id: any) {
+    postData('moviefavorite/remove' , {movieID: id} );
     $( '#favButton' ).empty();
     $( '<span>' ).appendTo( '#favButton' ).text( ' removed!' ).attr( 'id' , 'favButtonFade' );
     $( '#favButtonFade' ).fadeOut( 1000 )
     $( '#favButton' ).css( 'color' , 'black' ).attr( 'title' , 'Add as a favorite' );
 
 }
-function addMovieToFavoriteList( id : any) {
-    postData( 'http://localhost:3000/' , 'moviefavorite/add' , {movieID: id} );
+
+function addMovieToFavoriteList(id: any) {
+    postData('moviefavorite/add' , {movieID: id} );
     $( '#favButton' ).empty();
     $( '<span>' ).appendTo( '#favButton' ).text( ' added!' ).attr( 'id' , 'favButtonFade' );
     $( '#favButtonFade' ).fadeOut( 1000 );
@@ -263,7 +287,6 @@ function movieIsFavorite(id: any): any {
         method: 'get'
     } ).then( (response) => response.json() )
         .then( (responseData) => {
-            //console.warn(responseData);
             return responseData;
         } )
         .catch( error => console.warn( error ) );
@@ -312,15 +335,19 @@ function getUpcomingMovies() {
     addMovies( url );
 }
 
-function standardMoiveBody() {
-    $( '<div>' ).appendTo( '#content' ).attr( 'id' , 'resultMovieList' ).addClass( 'col-sm-5' ).addClass( 'list-group' );
-    $( '<div>' ).appendTo( '#content' ).attr( 'id' , 'resultMovieListDetail' ).addClass( 'col-sm-7' );
-    $( '#resultMovieList,#resultMovieListDetail' ).wrapAll( '<div>' ).addClass( 'row' );
+function standardMovieBody( title : string) {
+    $('<div>').appendTo('#content').addClass('row').attr('id', 'mainGridBody');
+    $('<div>').appendTo('#mainGridBody').addClass( 'col-sm-4' ).attr('id','leftSide');
+    $('<div>').appendTo('#leftSide').addClass('row').attr('id','nestedSequence');
+    $('<h1>').appendTo('#nestedSequence').addClass('col').text(title).addClass('media-heading').attr('id','pageTitle');
+    $('<span>').appendTo('#nestedSequence').addClass('col').attr('id','searchMovieTitle');
+    $('<div>').appendTo('#nestedSequence').attr( 'id' , 'resultMovieList' ).addClass( 'col' );
+    $( '<div>' ).appendTo( '#mainGridBody' ).attr( 'id' , 'resultMovieListDetail' ).addClass( 'col-sm-8' );
 }
 
-function postData(url: string , destiny: string , data: any) {
+function postData(destiny: string , data: any) {
     //console.log(url + destiny);
-    fetch( url + '' + destiny ,
+    fetch( databaseURL + '' + destiny ,
         {
             method: 'post' ,
             body: JSON.stringify( data ) ,

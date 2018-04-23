@@ -1,4 +1,41 @@
 
 #logo {
     height: 30px;
+    padding-left: 10px;
+}
+#content{
+    padding-left: 15px;
+}
+
+#mainGridBody{
+    padding-left: 15px;
+}
+footer{
+    padding-top: 55px;
+}
+
+.movie-list-item:hover{
+    cursor: pointer;
+    color:  #197FFF;
+}
+
+/* navbar */
+.navbar-brand{
+    color: #197FFF !important
+}
+
+.navbar-default {
+    background-color: #ffd27f !important;
+    border-color: #ffd27f !important;
+}
+.navbar-default .navbar-nav>li>a{
+     color: black !important;
+ }
+
+.navbar-default .navbar-nav>li>a:hover{
+    color: #197FFF !important;
+}
+
+a:hover{
+    color:  #197FFF !important;
 }
