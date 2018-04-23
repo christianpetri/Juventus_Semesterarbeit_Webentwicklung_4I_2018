@@ -8,8 +8,8 @@
 }
 
 #mainGridBody{
-    padding-left: 15px;
-}
+     padding-left: 15px;
+ }
 footer{
     padding-top: 55px;
 }
@@ -39,3 +39,4 @@ footer{
 a:hover{
     color:  #197FFF !important;
 }
+
