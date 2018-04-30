@@ -1,7 +1,7 @@
 {
-  "name": "juventus_semesterarbeit_webentwicklung_4i_2018",
+  "name": "juventus_semesterarbeit_webentwicklung_4I_2018",
   "version": "1.0.0",
-  "description": "https://www.themoviedb.org/",
+  "description": "Get and display data from the public TMDb API (https://www.themoviedb.org/",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -20,7 +20,11 @@
     ],
     "moduleFileExtensions": [
       "ts",
-      "js"
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
     ],
     "transform": {
       "^.+\\.js$": "babel-jest",
@@ -30,6 +34,7 @@
     "testMatch": [
       "**/?(*.)(spec|test).(ts|js)"
     ]
+
   },
   "repository": {
     "type": "git",
@@ -42,7 +47,7 @@
   },
   "homepage": "https://github.com/christianpetri/Juventus_Semesterarbeit_Webentwicklung_4I_2018#readme",
   "devDependencies": {
-    "@types/jest": "^22.2.2",
+    "@types/jest": "^22.2.3",
     "@types/jquery": "^3.3.1",
     "ajv": "^5.0.0",
     "babel-core": "^6.26.0",
@@ -57,7 +62,7 @@
     "jest-css-modules": "^1.1.0",
     "less-loader": "^4.1.0",
     "rimraf": "^2.6.2",
-    "ts-jest": "^21.2.3",
+    "ts-jest": "^21.2.4",
     "ts-loader": "^3.1.1",
     "tslint": "^5.9.1",
     "typescript": "^2.8.1",
