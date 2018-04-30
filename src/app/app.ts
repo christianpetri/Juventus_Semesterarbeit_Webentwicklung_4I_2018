@@ -32,22 +32,26 @@ route( '/search' , function () {
 function doSearch() {
     $( '#resultMovieListDetail' ).empty();
     const searchQuery = $( '#searchQueryInput' ).val();
-    const currentPage = 1;
-    const url = 'https://api.themoviedb.org/3/search/movie?api_key=' + apiKey + '&language=en-US&query=' + searchQuery + '&page=' + currentPage + '&include_adult=false';
-    addMovies( url );
-    fetch( url , {
-        method: 'get'
-    } ).then( (response) => {
-        //console.log(response.json());
-        return response.json();
-    } ).then( result => {
-        postData( 'moviesearchquery' , {
-            searchQuery: searchQuery ,
-            totalResults: result.total_results
+    if (searchQuery != '') {
+        const currentPage = 1;
+        const url = 'https://api.themoviedb.org/3/search/movie?api_key=' + apiKey + '&language=en-US&query=' + searchQuery + '&page=' + currentPage + '&include_adult=false';
+        addMovies( url );
+        fetch( url , {
+            method: 'get'
+        } ).then( (response) => {
+            //console.log(response.json());
+            return response.json();
+        } ).then( result => {
+            postData( 'moviesearchquery' , {
+                searchQuery: searchQuery ,
+                totalResults: result.total_results
+            } );
+        } ).catch( (err) => {
+            console.log( err );
         } );
-    } ).catch( (err) => {
-        console.log( err );
-    } );
+    } else {
+        console.log( 'Please enter a search query' );
+    }
 }
 
 route( '/top' , function () {
@@ -119,10 +123,13 @@ route( 'showhistory' , function () {
     $( '<span>' ).appendTo( '#searchDate' ).text( ' until now ' );
     $( '<input>' ).attr( 'type' , 'submit' ).attr( 'value' , 'submit' ).appendTo( '#searchDate' ).on( 'click' , () => {
         let date: any = $( '#searchDateFrom' ).val();
-        let dateFrom: any = new Date( date ).getTime();
-        getMovieSearchHistory( 'http://localhost:3000/movie/query/date?timestampDateFrom=' + dateFrom );
-        $( '#searchQueryTitle' ).empty();
-        $( '<h2>' ).appendTo( '#searchQueryTitle' ).text( ' Date' );
+        console.log( date );
+        if (date != '') {
+            let dateFrom: any = new Date( date ).getTime();
+            getMovieSearchHistory( 'http://localhost:3000/movie/query/date?timestampDateFrom=' + dateFrom );
+            $( '#searchQueryTitle' ).empty();
+            $( '<h2>' ).appendTo( '#searchQueryTitle' ).text( ' Date' );
+        }
     } );
     $( '<div>' ).appendTo( '#content' ).attr( 'id' , 'searchQueryTitle' );
     $( '<h2>' ).appendTo( '#searchQueryTitle' ).text( ' Date' ).text( 'Last 5 search queries' );
@@ -186,17 +193,6 @@ $( model ).on( 'modelchange' , () => {
     renderMovies();
 } );
 
-function standardMovieBody(title: string) {
-    $( '#content' ).empty();
-    $( '<div>' ).appendTo( '#content' ).addClass( 'row' ).attr( 'id' , 'mainGridBody' );
-    $( '<div>' ).appendTo( '#mainGridBody' ).addClass( 'col-sm-4' ).attr( 'id' , 'leftSide' );
-    $( '<div>' ).appendTo( '#leftSide' ).addClass( 'row' ).attr( 'id' , 'nestedSequence' );
-    $( '<h1>' ).appendTo( '#nestedSequence' ).addClass( 'col' ).text( title ).addClass( 'media-heading' ).attr( 'id' , 'pageTitle' );
-    $( '<span>' ).appendTo( '#nestedSequence' ).addClass( 'col' ).attr( 'id' , 'searchMovieTitle' );
-    $( '<div>' ).appendTo( '#nestedSequence' ).attr( 'id' , 'resultMovieList' ).addClass( 'col' );
-    $( '<div>' ).appendTo( '#mainGridBody' ).attr( 'id' , 'resultMovieListDetail' ).addClass( 'col-sm-8' );
-}
-
 function renderMovies() {
     $( '#resultMovieList' ).empty();
     for (const movie of model.movieList) { // Alle Filme im Model anzeigen
@@ -209,6 +205,17 @@ function renderMovies() {
             } )
             .addClass( 'movie-list-item' );
     }
+}
+
+function standardMovieBody(title: string) {
+    $( '#content' ).empty();
+    $( '<div>' ).appendTo( '#content' ).addClass( 'row' ).attr( 'id' , 'mainGridBody' );
+    $( '<div>' ).appendTo( '#mainGridBody' ).addClass( 'col-sm-4' ).attr( 'id' , 'leftSide' );
+    $( '<div>' ).appendTo( '#leftSide' ).addClass( 'row' ).attr( 'id' , 'nestedSequence' );
+    $( '<h1>' ).appendTo( '#nestedSequence' ).addClass( 'col' ).text( title ).addClass( 'media-heading' ).attr( 'id' , 'pageTitle' );
+    $( '<span>' ).appendTo( '#nestedSequence' ).addClass( 'col' ).attr( 'id' , 'searchMovieTitle' );
+    $( '<div>' ).appendTo( '#nestedSequence' ).attr( 'id' , 'resultMovieList' ).addClass( 'col' );
+    $( '<div>' ).appendTo( '#mainGridBody' ).attr( 'id' , 'resultMovieListDetail' ).addClass( 'col-sm-8' );
 }
 
 function showDetails(movie: Movie) {
@@ -251,7 +258,7 @@ function showDetails(movie: Movie) {
     this.vote_average = vote_average;
         this.vote_count = vote_count;
     */
-    $( '<div>' ).appendTo( '#resultMovieListDetail' ).text( 'vote average ' + movie.vote_average + ' vote count ' + movie.vote_count );
+    $( '<div>' ).appendTo( '#resultMovieListDetail' ).text( 'vote average: ' + movie.vote_average + ' vote count: ' + movie.vote_count );
     $( '<div>' ).appendTo( '#resultMovieListDetail' ).text( movie.overview );
     if (movie.backdrop_path !== null) {
         $( '<img>' , {
@@ -267,7 +274,7 @@ function removeMovieFromFavoriteList(id: any) {
     postData( 'moviefavorite/remove' , {movieID: id} );
     $( '#favButton' ).empty();
     $( '<span>' ).appendTo( '#favButton' ).text( ' removed!' ).attr( 'id' , 'favButtonFade' );
-    $( '#favButtonFade' ).fadeOut( 1000 )
+    $( '#favButtonFade' ).fadeOut( 1000 );
     $( '#favButton' ).css( 'color' , 'black' ).attr( 'title' , 'Add as a favorite' );
 
 }

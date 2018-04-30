@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3de27988-1620-441f-968c-319c9c47ffd9" name="Default" comment="Finished get Top by Genres">
-      <change afterPath="$PROJECT_DIR$/test/app.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/model.test.ts" afterDir="false" />
+    <list default="true" id="3de27988-1620-441f-968c-319c9c47ffd9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/model.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo.html" beforeDir="false" afterPath="$PROJECT_DIR$/todo.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,8 +35,8 @@
       <file leaf-file-name="app.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/app.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="312" column="1" lean-forward="true" selection-start-line="312" selection-start-column="1" selection-end-line="312" selection-end-column="1" />
+            <state relative-caret-position="367">
+              <caret line="131" column="9" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
               <folding>
                 <element signature="e#67#86#0" expanded="true" />
                 <element signature="e#507#1004#0" />
@@ -51,13 +44,12 @@
                 <element signature="e#1433#3034#0" />
                 <element signature="n#!!block;n#doSearchForGenres#0" />
                 <element signature="e#3152#3320#0" />
-                <element signature="e#3360#4316#0" />
                 <element signature="n#!!block;n#getMovieHistoryTemplate#0" />
                 <element signature="n#!!block;n#getMovieSearchHistory#0" />
                 <element signature="e#4358#4466#0" />
                 <element signature="n#!!block;n#getfavoriteMovies#0" />
-                <element signature="n#!!block;n#standardMovieBody#0" />
                 <element signature="n#!!block;n#renderMovies#0" />
+                <element signature="n#!!block;n#standardMovieBody#0" />
                 <element signature="n#!!block;n#showDetails#0" />
                 <element signature="n#!!block;n#removeMovieFromFavoriteList#0" />
                 <element signature="n#!!block;n#addMovieToFavoriteList#0" />
@@ -459,7 +451,7 @@
       <workItem from="1524308911354" duration="25883000" />
       <workItem from="1524338000379" duration="1979000" />
       <workItem from="1524464572632" duration="25901000" />
-      <workItem from="1525063585699" duration="27331000" />
+      <workItem from="1525063585699" duration="29007000" />
     </task>
     <task id="LOCAL-00001" summary="Next Button">
       <created>1520245334245</created>
@@ -608,7 +600,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524495068789</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Added get last 5 search queries">
+      <created>1525101298240</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1525101298240</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -644,7 +643,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="286724000" />
+    <option name="totallyTimeSpent" value="288400000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -744,7 +743,8 @@
     <MESSAGE value="Finished Add Favorite Movie" />
     <MESSAGE value="Redesigned the hompage" />
     <MESSAGE value="Finished get Top by Genres" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished get Top by Genres" />
+    <MESSAGE value="Added get last 5 search queries" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added get last 5 search queries" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -794,13 +794,12 @@
             <element signature="e#1433#3034#0" />
             <element signature="n#!!block;n#doSearchForGenres#0" />
             <element signature="e#3152#3320#0" />
-            <element signature="e#3360#4316#0" />
             <element signature="n#!!block;n#getMovieHistoryTemplate#0" />
             <element signature="n#!!block;n#getMovieSearchHistory#0" />
             <element signature="e#4358#4466#0" />
             <element signature="n#!!block;n#getfavoriteMovies#0" />
-            <element signature="n#!!block;n#standardMovieBody#0" />
             <element signature="n#!!block;n#renderMovies#0" />
+            <element signature="n#!!block;n#standardMovieBody#0" />
             <element signature="n#!!block;n#showDetails#0" />
             <element signature="n#!!block;n#removeMovieFromFavoriteList#0" />
             <element signature="n#!!block;n#addMovieToFavoriteList#0" />
@@ -845,13 +844,12 @@
             <element signature="e#1433#3034#0" />
             <element signature="n#!!block;n#doSearchForGenres#0" />
             <element signature="e#3152#3320#0" />
-            <element signature="e#3360#4316#0" />
             <element signature="n#!!block;n#getMovieHistoryTemplate#0" />
             <element signature="n#!!block;n#getMovieSearchHistory#0" />
             <element signature="e#4358#4466#0" />
             <element signature="n#!!block;n#getfavoriteMovies#0" />
-            <element signature="n#!!block;n#standardMovieBody#0" />
             <element signature="n#!!block;n#renderMovies#0" />
+            <element signature="n#!!block;n#standardMovieBody#0" />
             <element signature="n#!!block;n#showDetails#0" />
             <element signature="n#!!block;n#removeMovieFromFavoriteList#0" />
             <element signature="n#!!block;n#addMovieToFavoriteList#0" />
@@ -1146,8 +1144,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/app.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="312" column="1" lean-forward="true" selection-start-line="312" selection-start-column="1" selection-end-line="312" selection-end-column="1" />
+        <state relative-caret-position="367">
+          <caret line="131" column="9" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
           <folding>
             <element signature="e#67#86#0" expanded="true" />
             <element signature="e#507#1004#0" />
@@ -1155,13 +1153,12 @@
             <element signature="e#1433#3034#0" />
             <element signature="n#!!block;n#doSearchForGenres#0" />
             <element signature="e#3152#3320#0" />
-            <element signature="e#3360#4316#0" />
             <element signature="n#!!block;n#getMovieHistoryTemplate#0" />
             <element signature="n#!!block;n#getMovieSearchHistory#0" />
             <element signature="e#4358#4466#0" />
             <element signature="n#!!block;n#getfavoriteMovies#0" />
-            <element signature="n#!!block;n#standardMovieBody#0" />
             <element signature="n#!!block;n#renderMovies#0" />
+            <element signature="n#!!block;n#standardMovieBody#0" />
             <element signature="n#!!block;n#showDetails#0" />
             <element signature="n#!!block;n#removeMovieFromFavoriteList#0" />
             <element signature="n#!!block;n#addMovieToFavoriteList#0" />
