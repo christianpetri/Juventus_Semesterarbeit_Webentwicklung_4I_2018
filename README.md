@@ -4,8 +4,8 @@ Diagram
     Interaction with the database
 
 # Project Title
-## [HF Juventus] (https://technikerschule.juventus.ch/angebote/informatik/) term paper web development (4th semester computer science, year 2018)
-This is a Web Application that gets data from the public API of [TMDb] (https://www.themoviedb.org) and displays it.
+## [HF Juventus](https://technikerschule.juventus.ch/angebote/informatik/) term paper web development (4th semester computer science, year 2018)
+This is a Web Application that gets data from the public API of [TMDb](https://www.themoviedb.org) and displays it.
 
 ## Getting Started
 
@@ -13,17 +13,15 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Install [WebStorm] (https://www.jetbrains.com/webstorm/) and [NodeJS] \(>=8\) (https://nodejs.org/en/download/) with NPM (>=5.2).
+Install [WebStorm](https://www.jetbrains.com/webstorm/) and [NodeJS](https://nodejs.org/en/download/) (>=8)  with NPM (>=5.2).
 
 ### Installing Frontend
 
-Open the Project in the WebStorm Application and run
+Open the Project in the WebStorm Application and all the dependencies will be installed. Open the Terminal:
 
 ```
 npm install
 ```
-
-and all the dependencies will be installed.
 Start the web server
 ```
 npm start
@@ -31,7 +29,8 @@ npm start
 
 ### Installing Backend
 
-Install [WebStorm] (https://www.jetbrains.com/webstorm/), [NodeJS] \(>=8\) (https://nodejs.org/en/download/) with NPM (>=5.2) and [MongoDB](https://www.mongodb.com/).
+Install [WebStorm](https://www.jetbrains.com/webstorm/), [NodeJS](https://nodejs.org/en/download/) (>=8\) with NPM (>=5.2) and [MongoDB](https://www.mongodb.com/).
+Get the code from this Github [Juventus_Semesterarbeit_Webentwicklung_4I_2018_Database](https://github.com/christianpetri/Juventus_Semesterarbeit_Webentwicklung_4I_2018_Database)
 Open Project in WebStorm and run
 
 ```
@@ -43,6 +42,7 @@ Start the service
 ```
 npm start
 ```
+Also the MongoDB has to be running in the background.
 
 ## Running the tests
 
@@ -69,12 +69,7 @@ Give an example
 Add additional notes about how to deploy this on a live system
 
 ## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-###Frontend
+### Frontend
 * [NPM](https://www.npmjs.com/) - npm is the package manager for JavaScript
 * [NodeJS](https://nodejs.org/en/) - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine
 * [TSLint](https://palantir.github.io/tslint/) - TSLint is an extensible static analysis tool that checks TypeScript code
@@ -89,7 +84,7 @@ Add additional notes about how to deploy this on a live system
 * [Jest für unit testing](https://facebook.github.io/jest/) - Delightful JavaScript Testing
 * [less](http://lesscss.org/) - It's CSS, with just a little more
 
-###Backend
+### Backend
 * [NodeJS](https://nodejs.org/en/) - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine
 * [Express](http://expressjs.com/de/) - Fast, unopinionated, minimalist web framework for NodeJS
 * [MongoDB](https://www.mongodb.com/) - Ad hoc queries, indexing, and real time aggregation provide powerful ways to access and analyze your data
@@ -98,7 +93,7 @@ Add additional notes about how to deploy this on a live system
 
 [GitHub](http://github.com) for versioning. For the versions available, see the [Juventus_Semesterarbeit_Webentwicklung_4I_2018](https://github.com/christianpetri/Juventus_Semesterarbeit_Webentwicklung_4I_2018).
 
-## Authors
+## Author
 
 * **Christian Petri** - *Initial work* - [christianpetri](https://github.com/christianpetri/)
 

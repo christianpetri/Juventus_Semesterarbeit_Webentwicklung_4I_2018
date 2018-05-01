@@ -18,10 +18,13 @@ route( '/search' , function () {
     $( '<input>' ).appendTo( '#searchMovieTitle' )
         .attr( 'id' , 'searchQueryInput' )
         .attr( 'type' , 'text' )
+        .css('width','90%')
         .attr( 'placeholder' , 'Search for a movie' )
         .prop( 'required' , true );
     $( '<button>' ).appendTo( '#searchMovieTitle' )
         .addClass( 'btn btn-primary btn-sm' )
+        .css('width','90%')
+        .css('margin-bottom','10px')
         .text( ' Search the Movie Database ' )
         .on( 'click' , () => {
             doSearch()
@@ -67,7 +70,7 @@ route( '/topgenre' , function () {
     $( '<div>' ).appendTo( '#mainGridBodyGenre' ).addClass( 'col-sm-5' ).attr( 'id' , 'leftSide' );
     $( '<div>' ).appendTo( '#leftSide' ).addClass( 'row' ).attr( 'id' , 'nestedSequence' );
     $( '<div>' ).appendTo( '#nestedSequence' ).attr( 'id' , 'genres' ).addClass( 'col-sm-4' );
-    $( '<h1>' ).appendTo( '#genres' ).text( 'Genre' ).addClass( 'media-heading' );
+    $( '<h1>' ).appendTo( '#genres' ).text( 'Genre' ).addClass( 'media-heading' ).addClass('page-header-blue');
     $( '<div>' ).appendTo( '#nestedSequence' ).attr( 'id' , 'titleTopMovies' ).addClass( 'col-md-8' );
     $( '<div>' ).appendTo( '#titleTopMovies' ).attr( 'id' , 'resultMovieListTitle' );
     $( '<div>' ).appendTo( '#titleTopMovies' ).attr( 'id' , 'resultMovieList' );
@@ -83,7 +86,7 @@ route( '/topgenre' , function () {
                 .addClass( 'movie-list-item' )
                 .on( 'click' , () => {
                     $( '#resultMovieListTitle' ).empty();
-                    $( '<h1>' ).appendTo( '#resultMovieListTitle' ).text( genre[i].name ).addClass( 'media-heading' );
+                    $( '<h1>' ).appendTo( '#resultMovieListTitle' ).text( genre[i].name ).addClass( 'media-heading' ).addClass('page-header-blue');
                     doSearchForGenres( {genreID: genreID} );
                 } );
         }
@@ -109,7 +112,7 @@ route( '/' , function () {
 
 route( 'showhistory' , function () {
     $( '#content' ).empty();
-    $( '<h1>' ).appendTo( '#content' ).text( 'Search history' );
+    $( '<h1>' ).appendTo( '#content' ).text( 'Search history' ).addClass('page-header-blue');
     getMovieHistoryTemplate( '' , 'Last 5 search queries' , 'http://localhost:3000/movie/query/sort/last/5/' );
     $( '<span>' ).appendTo( '#content' ).text( 'Total Results: ' );
     getMovieHistoryTemplate( 'Total Results' , 'descending' , 'http://localhost:3000/movie/query/sort/totalresults/desc' );
@@ -195,6 +198,8 @@ $( model ).on( 'modelchange' , () => {
 
 function renderMovies() {
     $( '#resultMovieList' ).empty();
+    let first_iteration = true;
+    console.log(model.movieList.length);
     for (const movie of model.movieList) { // Alle Filme im Model anzeigen
         $( '<div>' )
             .appendTo( '#resultMovieList' )
@@ -204,6 +209,10 @@ function renderMovies() {
                 showDetails( model.getMovie( movie.id ) )
             } )
             .addClass( 'movie-list-item' );
+        if(first_iteration){
+            first_iteration = false;
+            showDetails( model.getMovie( movie.id ));
+        }
     }
 }
 
@@ -212,7 +221,11 @@ function standardMovieBody(title: string) {
     $( '<div>' ).appendTo( '#content' ).addClass( 'row' ).attr( 'id' , 'mainGridBody' );
     $( '<div>' ).appendTo( '#mainGridBody' ).addClass( 'col-sm-4' ).attr( 'id' , 'leftSide' );
     $( '<div>' ).appendTo( '#leftSide' ).addClass( 'row' ).attr( 'id' , 'nestedSequence' );
-    $( '<h1>' ).appendTo( '#nestedSequence' ).addClass( 'col' ).text( title ).addClass( 'media-heading' ).attr( 'id' , 'pageTitle' );
+    $( '<h1>' )
+        .appendTo( '#nestedSequence' ).addClass( 'col' )
+        .text( title ).addClass( 'media-heading' )
+        .attr( 'id' , 'pageTitle' )
+        .addClass('page-header-blue');
     $( '<span>' ).appendTo( '#nestedSequence' ).addClass( 'col' ).attr( 'id' , 'searchMovieTitle' );
     $( '<div>' ).appendTo( '#nestedSequence' ).attr( 'id' , 'resultMovieList' ).addClass( 'col' );
     $( '<div>' ).appendTo( '#mainGridBody' ).attr( 'id' , 'resultMovieListDetail' ).addClass( 'col-sm-8' );
@@ -223,15 +236,34 @@ function showDetails(movie: Movie) {
     $( '<h1>' )
         .appendTo( '#resultMovieListDetail' )
         .text( movie.title )
-        .append( $( '<small>' )
-            .text( ' ' + movie.release_date.substring( 0 , 4 ) ) ).addClass( 'media-heading' );
+        .addClass( 'media-heading' )
+        .append(
+            $( '<small>')
+            .text( ' ' + movie.release_date.substring( 0 , 4 ) ).css('color','#lightgray')
+        );
+
+    if (movie.backdrop_path !== null) {
+        $( '<img>' , {
+            src: 'https://image.tmdb.org/t/p/w500' + movie.backdrop_path ,
+            width: '100%'
+        } ).appendTo( '#resultMovieListDetail' ).addClass( '.img-fluid' ).css( 'padding-top' , '10px' );
+    } else {
+        $( '<div>' ).appendTo( '#resultMovieListDetail' ).text( 'No Image found' ).css( 'padding-top' , '10px' );
+    }
+
+
+    $( '<span>' ).appendTo( '#resultMovieListDetail' ).text( 'average rating: ' + movie.vote_average + ' votes: ' + movie.vote_count )
+        .css('color','#fda2a2')
+        .css('font-weight','bold')
+        .css('font-size', '18px');
     let isAFavoriteMovie = false;
 
-    $( '<div>' )
+    $( '<span>' )
         .appendTo( '#resultMovieListDetail' )
         .attr( 'id' , 'favButton' )
         .addClass( 'glyphicon glyphicon-heart x1' )
         .css( 'color' , 'grey' )
+        .css('padding-left','20px')
         .attr( 'title' , 'Add as a favorite Movie' )
         .on( 'click' , () => {
             if (isAFavoriteMovie) {
@@ -254,20 +286,8 @@ function showDetails(movie: Movie) {
             }
         }
     );
-    /*
-    this.vote_average = vote_average;
-        this.vote_count = vote_count;
-    */
-    $( '<div>' ).appendTo( '#resultMovieListDetail' ).text( 'vote average: ' + movie.vote_average + ' vote count: ' + movie.vote_count );
+
     $( '<div>' ).appendTo( '#resultMovieListDetail' ).text( movie.overview );
-    if (movie.backdrop_path !== null) {
-        $( '<img>' , {
-            src: 'https://image.tmdb.org/t/p/w500' + movie.backdrop_path ,
-            width: '100%'
-        } ).appendTo( '#resultMovieListDetail' ).addClass( '.img-fluid' ).css( 'padding-top' , '10px' );
-    } else {
-        $( '<div>' ).appendTo( '#resultMovieListDetail' ).text( 'No Image found' ).css( 'padding-top' , '10px' );
-    }
 }
 
 function removeMovieFromFavoriteList(id: any) {

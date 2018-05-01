@@ -2,23 +2,50 @@
 #logo {
     height: 30px;
     padding-left: 10px;
+
 }
 #content{
     padding-left: 15px;
+    padding-top: 30px;
 }
 
 #mainGridBody{
      padding-left: 15px;
  }
-footer{
-    padding-top: 55px;
+.logo_attribution{
+    position: fixed;
+    bottom: 0px;
+    padding-left: 15px;
+    color: #3fde96;
+    max-width: 300px;
+    background-color: white;
+    padding-bottom: 10px;
+}
+#leftSide{
+    padding-top:45px;
+}
+
+.movie-list-item{
+    font-weight: bold;
+    max-width: 74%;
 }
 
 .movie-list-item:hover{
     cursor: pointer;
     color:  #197FFF;
 }
-
+.page-header-blue{
+    color: #197FFF;
+    font-size: 20px;
+    padding-bottom: 13px;
+}
+.m-search-input{
+    padding-right: 15px;
+    padding-bottom: 20px;
+}
+.table{
+    margin-bottom: 80px !important;
+}
 /* navbar */
 .navbar-brand{
     color: #197FFF !important
