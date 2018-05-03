@@ -29,9 +29,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 Install
-    -[WebStorm](https://www.jetbrains.com/webstorm/)
-    -[NodeJS](https://nodejs.org/en/download/) (>=8)  with NPM (>=5.2)
-    -[MongoDB](https://www.mongodb.com/).
+    - [WebStorm](https://www.jetbrains.com/webstorm/)
+    - [NodeJS](https://nodejs.org/en/download/) (>=8)  with NPM (>=5.2)
+    - [MongoDB](https://www.mongodb.com/).
 
 ### Installing Frontend
 Open the Project (this GitHub) in the WebStorm Application, open its terminal and run the following command below to install all the dependencies.
@@ -56,7 +56,7 @@ Change the following line of code according to your mongodb setup in the file na
 let url = 'mongodb://localhost:27017/';
 ```
 Point your Backend to the location where the database root folder is installed.
-Run the command below with you system specific path.
+Run the command below with your system specific path.
 ```
 mongod --dbpath=C:\Users\User\Dev\Data\Movies
 ```
@@ -67,9 +67,9 @@ npm run start
 ```
 Also the MongoDB has to be running in the background.
 
-## testing the setup
+## Testing the setup
 
-Start the front, the backend and the MongoDB and go to the browser and enter
+Start the frontend (npm run start), the backend (npm run start) and the MongoDB, then go to the browser and enter
 ```
 http://localhost:8000/?#test
 ```

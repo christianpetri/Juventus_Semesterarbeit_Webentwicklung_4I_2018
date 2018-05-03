@@ -284,6 +284,12 @@ function getfavoriteMovies(url: string) {
     } );
 }
 
+route('popularmovies', function () {
+    standardMovieBody( 'Popular Movies' );
+    const url = 'https://api.themoviedb.org/3/movie/popular?api_key=' + apiKey + '&language=en-US';
+    addMovies( url );
+})
+
 $( model ).on( 'modelchange' , () => {
     renderMovies();
 } );
