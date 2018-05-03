@@ -1,11 +1,12 @@
 Technische Zusammenfassung wie die Applikation funktioniert und welche Technologien zu welchen Zwecken eingesetzt wurden. (Umfang max. 5 A4 Seiten.)
-Diagram
+    Diagram
     Interaction between "Things"
     Interaction with the database
 
-# Project Title
-[HF Juventus](https://technikerschule.juventus.ch/angebote/informatik/) term paper web development (4th semester computer science, year 2018)
-This is a Web Application that gets data from the public API of [TMDb](https://www.themoviedb.org) and displays it.
+[HF Juventus](https://technikerschule.juventus.ch/angebote/informatik/) term paper web development course (4th semester computer science, year 2018)
+
+# Project Movie World
+A web application that fetches and displays data from [TMDb](https://www.themoviedb.org) via its public API.
 
 ## Requirements:
 The user should be able to:
@@ -24,14 +25,16 @@ Several results (films) must be presented in an overview.
 Detail view of a result (movie) must be able to be displayed.
 
 ## Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
-
-Install [WebStorm](https://www.jetbrains.com/webstorm/) and [NodeJS](https://nodejs.org/en/download/) (>=8)  with NPM (>=5.2).
+Install
+    -[WebStorm](https://www.jetbrains.com/webstorm/)
+    -[NodeJS](https://nodejs.org/en/download/) (>=8)  with NPM (>=5.2)
+    -[MongoDB](https://www.mongodb.com/).
 
 ### Installing Frontend
-Open the Project in the WebStorm Application, open its terminal and run the following command to install all the dependencies.
+Open the Project (this GitHub) in the WebStorm Application, open its terminal and run the following command below to install all the dependencies.
 ```
 npm install
 ```
@@ -40,9 +43,7 @@ Start the web server
 npm run start
 ```
 
-### Installing Backend
-
-Install [WebStorm](https://www.jetbrains.com/webstorm/), [NodeJS](https://nodejs.org/en/download/) (>=8\) with NPM (>=5.2) and [MongoDB](https://www.mongodb.com/).
+### Installing the backend
 Get the code from this Github [Juventus_Semesterarbeit_Webentwicklung_4I_2018_Database](https://github.com/christianpetri/Juventus_Semesterarbeit_Webentwicklung_4I_2018_Database)
 
 Open the Project in the WebStorm Application, open its terminal and run the following command to install all the dependencies.
@@ -50,9 +51,14 @@ Open the Project in the WebStorm Application, open its terminal and run the foll
 npm install
 ```
 
-Change the following line of code in the file named app.js:
+Change the following line of code according to your mongodb setup in the file named app.js. (Below are the default settings)
 ```javascript
-var url = 'path/to/your/MongoDB/Server'
+let url = 'mongodb://localhost:27017/';
+```
+Point your Backend to the location where the database root folder is installed.
+Run the command below with you system specific path.
+```
+mongod --dbpath=C:\Users\User\Dev\Data\Movies
 ```
 
 Start the service
@@ -61,28 +67,20 @@ npm run start
 ```
 Also the MongoDB has to be running in the background.
 
-# testing the setup
+## testing the setup
 
-
-Start the front, the backend and the MongoDB
-and go to the browser and enter
+Start the front, the backend and the MongoDB and go to the browser and enter
 ```
 http://localhost:8000/?#test
 ```
-## Success
-
+### Success
 Connected to the TMDb API
 Backend online
 Connected successfully to the MongoDB
 
-## Possible errors
-### API and Backend offline
-Not connected to the TMDb API (Are you offline?)
-Backend offline. (Restart Backend with npm run start)
-### API offline and Backend online
-Not connected to the TMDb API (Are you offline?)
-Backend is online
-Connected successfully to the MongoDB
+### Possible errors
+-Not connected to the TMDb API (Are you offline?)
+-Backend offline. (Restart Backend with npm run start)
 
 ## Built With
 ### Frontend
