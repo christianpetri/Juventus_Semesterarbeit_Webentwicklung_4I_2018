@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3de27988-1620-441f-968c-319c9c47ffd9" name="Default" comment="">
+    <list default="true" id="3de27988-1620-441f-968c-319c9c47ffd9" name="Default" comment="Added Linebreak to Readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -80,8 +80,8 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="23" column="27" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="27" />
+            <state relative-caret-position="283">
+              <caret line="23" column="92" selection-start-line="23" selection-start-column="92" selection-end-line="23" selection-end-column="92" />
             </state>
           </provider>
         </entry>
@@ -435,7 +435,7 @@
       <workItem from="1525700333655" duration="605000" />
       <workItem from="1525702636384" duration="3246000" />
       <workItem from="1525727000868" duration="14132000" />
-      <workItem from="1525791990698" duration="1459000" />
+      <workItem from="1525791990698" duration="2269000" />
     </task>
     <task id="LOCAL-00001" summary="Next Button">
       <created>1520245334245</created>
@@ -626,7 +626,21 @@
       <option name="project" value="LOCAL" />
       <updated>1525349866035</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Expanded the Readme">
+      <created>1525793504909</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1525793504909</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Added Linebreak to Readme">
+      <created>1525793930313</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1525793930313</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -662,7 +676,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="350196000" />
+    <option name="totallyTimeSpent" value="351006000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -740,8 +754,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="tslint" />
-    <MESSAGE value="top genres working" />
     <MESSAGE value="top genres done" />
     <MESSAGE value="upcoming movies" />
     <MESSAGE value="upcoming movies added" />
@@ -765,7 +777,9 @@
     <MESSAGE value="minor clean up" />
     <MESSAGE value="code clean up" />
     <MESSAGE value="Added Video" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Video" />
+    <MESSAGE value="Expanded the Readme" />
+    <MESSAGE value="Added Linebreak to Readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Linebreak to Readme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1187,8 +1201,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="23" column="27" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="27" />
+        <state relative-caret-position="283">
+          <caret line="23" column="92" selection-start-line="23" selection-start-column="92" selection-end-line="23" selection-end-column="92" />
         </state>
       </provider>
     </entry>

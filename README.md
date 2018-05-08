@@ -14,14 +14,14 @@ The user should be able to:
     - Filter by date
     - Filter by number of entries
 - Add / remove movies to a favorite list
-- Display the favorites list
-No login required. Every user has the same favorites.
-Several results (films) must be presented in an overview.
+- Display the favorites list <br/>
+No login required. Every user has the same favorites. <br/>
+Several results (films) must be presented in an overview. <br/>
 Detail view of a result (movie) must be able to be displayed.
 
 ## Pages
-[![Movie World Webpage walkthrough](https://img.youtube.com/vi/lcpZXcT0GOw/0.jpg)](https://www.youtube.com/watch?v=lcpZXcT0GOw)  
-Youtube webpage walkthrough video. It shows all the different pages and their functions.
+[![Movie World Webpage walkthrough](https://img.youtube.com/vi/lcpZXcT0GOw/0.jpg)](https://www.youtube.com/watch?v=lcpZXcT0GOw) <br/>
+Youtube [Movie World webpage walkthrough](https://www.youtube.com/watch?v=lcpZXcT0GOw) video. It shows all the different pages and their functions.
  ### Webpage navigation overview
 - Upcoming
    - displays the upcoming movies
