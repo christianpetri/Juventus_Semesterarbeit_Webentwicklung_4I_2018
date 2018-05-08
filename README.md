@@ -1,8 +1,3 @@
-Technische Zusammenfassung wie die Applikation funktioniert und welche Technologien zu welchen Zwecken eingesetzt wurden. (Umfang max. 5 A4 Seiten.)
-    Diagram
-    Interaction between "Things"
-    Interaction with the database
-
 [HF Juventus](https://technikerschule.juventus.ch/angebote/informatik/) term paper web development course (4th semester computer science, year 2018)
 
 # Project Movie World
@@ -24,8 +19,26 @@ No login required. Every user has the same favorites.
 Several results (films) must be presented in an overview.
 Detail view of a result (movie) must be able to be displayed.
 
-## Page walkthrough
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/lcpZXcT0GOw/0.jpg)](https://www.youtube.com/watch?v=lcpZXcT0GOw)]
+## Pages
+[![Movie World Webpage walkthrough](https://img.youtube.com/vi/lcpZXcT0GOw/0.jpg)](https://www.youtube.com/watch?v=lcpZXcT0GOw)
+Youtube webpage walkthrough video. It shows all the different pages and their functions.
+ ### Webpage navigation overview
+- Upcoming
+   - displays the upcoming movies
+- Search
+    - search films (by title)
+- Popular
+     - displays the 20 most popular movies
+- Top Rated
+    - displays the top 20 rated movies
+- Top Rated by Genres
+    - displays the top 20 rated movies per category
+- Search History
+    - displays and filters the list of recent searches
+- Favorites
+    - displays the favorites list
+
+On all pages (expect 'Search History') there is a little black or red heart, when clicked it adds or removes the movie from the favorite movie list
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
