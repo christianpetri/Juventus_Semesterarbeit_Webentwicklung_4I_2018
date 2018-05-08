@@ -20,7 +20,7 @@ Several results (films) must be presented in an overview.
 Detail view of a result (movie) must be able to be displayed.
 
 ## Pages
-[![Movie World Webpage walkthrough](https://img.youtube.com/vi/lcpZXcT0GOw/0.jpg)](https://www.youtube.com/watch?v=lcpZXcT0GOw)
+[![Movie World Webpage walkthrough](https://img.youtube.com/vi/lcpZXcT0GOw/0.jpg)](https://www.youtube.com/watch?v=lcpZXcT0GOw)  
 Youtube webpage walkthrough video. It shows all the different pages and their functions.
  ### Webpage navigation overview
 - Upcoming
