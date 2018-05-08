@@ -4,12 +4,13 @@ import 'less';
 import 'riot-route';
 import route from 'riot-route';
 import {apiKey , databaseURL} from './constants';
-import '../css/index.css';
+import '../less/index.less';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../img/logo_tmdb.png';
-import {DefaultMovieModel} from "./movie-model";
+import {DefaultMovieModel} from "./Movie-Model";
 import {Movie} from "./Movie";
 //import any = jasmine.any;
+import './route'
 
 let model = new DefaultMovieModel();
 
@@ -18,19 +19,22 @@ route( '/search' , function () {
     $( '<input>' ).appendTo( '#searchMovieTitle' )
         .attr( 'id' , 'searchQueryInput' )
         .attr( 'type' , 'text' )
-        .css('width','90%')
+        .css( 'width' , '90%' )
         .attr( 'placeholder' , 'Search for a movie' )
         .prop( 'required' , true );
+
     $( '<button>' ).appendTo( '#searchMovieTitle' )
         .addClass( 'btn btn-primary btn-sm' )
-        .css('width','90%')
-        .css('margin-bottom','10px')
+        .css( 'width' , '90%' )
+        .css( 'margin-bottom' , '10px' )
         .text( ' Search the Movie Database ' )
-        .on( 'click' , () => {
-            doSearch()
+        .on( 'click', () => {
+            doSearch();
         } );
-    $( '#searchMovieTitle' ).wrap( '<form>' );
+
+    $( '#searchMovieTitle' ).wrap( '<form>');
 } );
+
 
 function doSearch() {
     $( '#resultMovieListDetail' ).empty();
@@ -41,10 +45,8 @@ function doSearch() {
         addMovies( url );
         fetch( url , {
             method: 'get'
-        } ).then( (response) => {
-            //console.log(response.json());
-            return response.json();
-        } ).then( result => {
+        } ).then( (response) => response.json()
+        ).then( result => {
             postData( 'moviesearchquery' , {
                 searchQuery: searchQuery ,
                 totalResults: result.total_results
@@ -69,7 +71,7 @@ route( '/topgenre' , function () {
     $( '<div>' ).appendTo( '#mainGridBodyGenre' ).addClass( 'col-sm-5' ).attr( 'id' , 'leftSide' );
     $( '<div>' ).appendTo( '#leftSide' ).addClass( 'row' ).attr( 'id' , 'nestedSequence' );
     $( '<div>' ).appendTo( '#nestedSequence' ).attr( 'id' , 'genres' ).addClass( 'col-sm-4' );
-    $( '<h1>' ).appendTo( '#genres' ).text( 'Genre' ).addClass( 'media-heading' ).addClass('page-header-blue');
+    $( '<h1>' ).appendTo( '#genres' ).text( 'Genre' ).addClass( 'media-heading' ).addClass( 'page-header-blue' );
     $( '<div>' ).appendTo( '#nestedSequence' ).attr( 'id' , 'titleTopMovies' ).addClass( 'col-md-8' );
     $( '<div>' ).appendTo( '#titleTopMovies' ).attr( 'id' , 'resultMovieListTitle' );
     $( '<div>' ).appendTo( '#titleTopMovies' ).attr( 'id' , 'resultMovieList' );
@@ -85,7 +87,7 @@ route( '/topgenre' , function () {
                 .addClass( 'movie-list-item' )
                 .on( 'click' , () => {
                     $( '#resultMovieListTitle' ).empty();
-                    $( '<h1>' ).appendTo( '#resultMovieListTitle' ).text( genre[i].name ).addClass( 'media-heading' ).addClass('page-header-blue');
+                    $( '<h1>' ).appendTo( '#resultMovieListTitle' ).text( genre[i].name ).addClass( 'media-heading' ).addClass( 'page-header-blue' );
                     doSearchForGenres( {genreID: genreID} );
                 } );
         }
@@ -96,12 +98,13 @@ function doSearchForGenres(parameters: { genreID: any }) {
     let genreID = parameters.genreID;
     model.resetMovieList();
     $( '#resultMovieListDetail' ).empty();
-    $( '<h1>' ).appendTo( '#resultMovieList' ).text( 'Genre' ).addClass( 'media-heading' );
+    $( '<h1>' ).appendTo( '#resultMovieList' ).text( '' ).addClass( 'media-heading' );
     ////https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=12
     const url = 'https://api.themoviedb.org/3/discover/movie?&api_key=' + apiKey + '&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=' + genreID;
     addMovies( url );
 }
 
+//Upcoming movies
 route( '/' , function () {
     standardMovieBody( 'Upcoming Movies' );
     const url = 'https://api.themoviedb.org/3/movie/upcoming?api_key=' + apiKey + '&language=en-US';
@@ -112,14 +115,14 @@ route( '/test' , function () {
     fetch( databaseURL , {
         method: 'get'
     } ).then( (response) => {
-        if(response.status == 200){
-            $('<div>').appendTo('#content').text('Backend is online');
+        if (response.status == 200) {
+            $( '<div>' ).appendTo( '#content' ).text( 'Backend is online' );
         }
         return response.json();
     } ).then( (response) => {
-        $('<div>').appendTo('#content').text(response.response);
+        $( '<div>' ).appendTo( '#content' ).text( response.response );
     } ).catch( (err) => {
-        $('<div>').appendTo('#content').text('Backend offline. (Restart Backend with npm run start)');
+        $( '<div>' ).appendTo( '#content' ).text( 'Backend offline. (Restart Backend with npm run start)' );
         console.log( err );
     } );
 
@@ -127,83 +130,23 @@ route( '/test' , function () {
     fetch( url , {
         method: 'get'
     } ).then( (response) => {
-        console.log(response.status);
-        if(response.status == 200){
-            $('<div>').appendTo('#content').text('Connected to the TMDb API');
+        console.log( response.status );
+        if (response.status == 200) {
+            $( '<div>' ).appendTo( '#content' ).text( 'Connected to the TMDb API' );
         }
-        if(response.status == 401){
-            $('<div>').appendTo('#content').text('Not connected to the TMDb API');
-        }
-    } ).catch( (err) => {
-        $('<div>').appendTo('#content').text('Not connected to the TMDb API (Are you offline?)');
-        console.log(err);
-    } );
-
-} );
-/*
-route( 'showhistory' , function () {
-    $( '#content' ).empty();
-    $( '<h1>' ).appendTo( '#content' ).text( 'Search history' ).addClass('page-header-blue');
-    getMovieHistoryTemplate( '' , 'Last 5 search queries' , 'http://localhost:3000/movie/query/sort/last/5/' );
-    $( '<span>' ).appendTo( '#content' ).text( 'Total Results: ' );
-    getMovieHistoryTemplate( 'Total Results' , 'descending' , 'http://localhost:3000/movie/query/sort/totalresults/desc' );
-    getMovieHistoryTemplate( 'Total Results' , 'ascending' , 'http://localhost:3000/movie/query/sort/totalresults/asc' );
-    $( '<span>' ).appendTo( '#content' ).text( 'Search Date: ' );
-    getMovieHistoryTemplate( 'Search Date' , 'descending' , 'http://localhost:3000/movie/query/sort/date/desc' );
-    getMovieHistoryTemplate( 'Search Date' , 'ascending' , 'http://localhost:3000/movie/query/sort/date/asc' );
-    $( '<form>' ).appendTo( '#content' ).attr( 'id' , 'searchDate' );
-    $( '<span>' ).appendTo( '#searchDate' ).text( 'Search queries from ' );
-    $( '<input>' ).appendTo( '#searchDate' ).attr( 'type' , 'date' ).attr( 'id' , 'searchDateFrom' ).prop( 'required' , true );
-    $( '<span>' ).appendTo( '#searchDate' ).text( ' until now ' );
-    $( '<input>' ).attr( 'type' , 'submit' ).attr( 'value' , 'submit' ).appendTo( '#searchDate' ).on( 'click' , () => {
-        let date: any = $( '#searchDateFrom' ).val();
-        console.log( date );
-        if (date != '') {
-            let dateFrom: any = new Date( date ).getTime();
-            getMovieSearchHistory( 'http://localhost:3000/movie/query/date?timestampDateFrom=' + dateFrom );
-            $( '#searchQueryTitle' ).empty();
-            $( '<h2>' ).appendTo( '#searchQueryTitle' ).text( ' Date' );
-        }
-    } );
-    $( '<div>' ).appendTo( '#content' ).attr( 'id' , 'searchQueryTitle' );
-    $( '<h2>' ).appendTo( '#searchQueryTitle' ).text( ' Date' ).text( 'Last 5 search queries' );
-    getMovieSearchHistory( 'http://localhost:3000/movie/query/sort/last/5/' );
-    $( '<table>' ).appendTo( '#content' ).addClass( 'table table-striped' ).attr( 'id' , 'searchHistory' );
-    $( '<thead>' ).appendTo( '#searchHistory' ).html( '<tr><th scope=\'col\'>Search</th><th scope=\'col\'>Total Results</th><th scope=\'col\'>Search Date / Time</th></tr>' );
-    $( '<tbody>' ).appendTo( '#searchHistory' ).attr( 'id' , 'searchHistoryBody' );
-} );
-function getMovieHistoryTemplate(topic: string , description: string , url: string) {
-    $( '<span>' ).appendTo( '#content' ).html( description ).addClass( 'movie-list-item' ).css( 'margin-right' , '15px' ).on( 'click' , () => {
-        getMovieSearchHistory( url );
-        $( '#searchQueryTitle' ).empty();
-        $( '<h2>' ).appendTo( '#searchQueryTitle' ).text( topic + ' ' + description );
-    } );
-}
-
-function getMovieSearchHistory(url: string) {
-    $( '#searchHistoryBody' ).empty();
-    fetch( url , {
-        method: 'get'
-    } ).then( (response) => {
-        //console.log(response.json());
-        return response.json();
-    } ).then( (responses) => {
-        for (const response of responses) { // Going over the results
-            console.log( response.searchString );
-            var title = response.searchString;
-            var total = response.totalResults;
-            var date = new Date( response.ts );
-            var dateString = date.toLocaleString();
-            $( '<tr>' ).appendTo( '#searchHistoryBody' ).html( '<th scope=\'row\'>' + title + '</th><td>' + total + '</td><td>' + dateString + '</td>' );
+        if (response.status == 401) {
+            $( '<div>' ).appendTo( '#content' ).text( 'Not connected to the TMDb API' );
         }
     } ).catch( (err) => {
+        $( '<div>' ).appendTo( '#content' ).text( 'Not connected to the TMDb API (Are you offline?)' );
         console.log( err );
     } );
-}
-*/
+
+} );
+
 route( 'showhistory' , function () {
     $( '#content' ).empty();
-    standardMovieBody('Search History');
+    standardMovieBody( 'Search History' );
 
     getMovieHistoryTemplate( '' , 'Last 5 search queries' , 'http://localhost:3000/movie/query/sort/last/5/' );
     $( '<div>' ).appendTo( '#resultMovieList' ).text( 'Total Results: ' );
@@ -219,7 +162,7 @@ route( 'showhistory' , function () {
     $( '<div>' ).appendTo( '#searchDate' ).text( ' until now ' );
     $( '<input>' ).attr( 'type' , 'submit' ).attr( 'value' , 'submit' ).appendTo( '#searchDate' ).on( 'click' , () => {
         let date: any = $( '#searchDateFrom' ).val();
-        console.log( date );
+        //console.log( date );
         if (date != '') {
             let dateFrom: any = new Date( date ).getTime();
             getMovieSearchHistory( 'http://localhost:3000/movie/query/date?timestampDateFrom=' + dateFrom );
@@ -236,6 +179,7 @@ route( 'showhistory' , function () {
     $( '<tbody>' ).appendTo( '#searchHistory' ).attr( 'id' , 'searchHistoryBody' );
 
 } );
+
 function getMovieHistoryTemplate(topic: string , description: string , url: string) {
     $( '<div>' ).appendTo( '#resultMovieList' ).html( description ).addClass( 'movie-list-item' ).css( 'margin-right' , '15px' ).on( 'click' , () => {
         getMovieSearchHistory( url );
@@ -243,23 +187,22 @@ function getMovieHistoryTemplate(topic: string , description: string , url: stri
         $( '<h2>' ).appendTo( '#searchQueryTitle' ).text( topic + ' ' + description );
     } );
 }
+
 function getMovieSearchHistory(url: string) {
     $( '#searchHistoryBody' ).empty();
     fetch( url , {
         method: 'get'
-    } ).then( (response) => {
-        //console.log(response.json());
-        return response.json();
-    } ).then( (responses) => {
-        for (const response of responses) { // Going over the results
-            console.log( response.searchString );
-            var title = response.searchString;
-            var total = response.totalResults;
-            var date = new Date( response.ts );
-            var dateString = date.toLocaleString();
-            $( '<tr>' ).appendTo( '#searchHistoryBody' ).html( '<th scope=\'row\'>' + title + '</th><td>' + total + '</td><td>' + dateString + '</td>' );
-        }
-    } ).catch( (err) => {
+    } ).then( (response) => response.json() )
+        .then( (responses) => {
+            for (const response of responses) { // Going over the results
+                //console.log( response.searchString );
+                let title = response.searchString;
+                let total = response.totalResults;
+                let date = new Date( response.ts );
+                let dateString = date.toLocaleString();
+                $( '<tr>' ).appendTo( '#searchHistoryBody' ).html( '<th scope=\'row\'>' + title + '</th><td>' + total + '</td><td>' + dateString + '</td>' );
+            }
+        } ).catch( (err) => {
         console.log( err );
     } );
 }
@@ -268,36 +211,40 @@ route( 'favoriteMovie' , function () {
     standardMovieBody( 'Favorite Movie' );
     getfavoriteMovies( 'http://localhost:3000/moviefavorite' );
 } );
+
 function getfavoriteMovies(url: string) {
     fetch( url , {
         method: 'get'
-    } ).then( (response) => {
-        return response.json();
-    } ).then( (responses) => {
-        //console.log( responses );
+    } ).then( (response) => response.json())
+        .then( (responses) => {
         model.resetMovieList();
+        let i = 0;
         for (const response of responses) {
-            addMovie( 'http://api.themoviedb.org/3/movie/' + response.id + '?api_key=' + apiKey );
+            i++;
+            if (i == responses.length) {
+                addMovie( 'http://api.themoviedb.org/3/movie/' + response.id + '?api_key=' + apiKey ).then( () => {
+                    renderMovies();
+                } );
+            } else {
+                addMovie( 'http://api.themoviedb.org/3/movie/' + response.id + '?api_key=' + apiKey );
+            }
         }
     } ).catch( (err) => {
         console.log( err );
     } );
+
 }
 
-route('popularmovies', function () {
+route( 'popularmovies' , function () {
     standardMovieBody( 'Popular Movies' );
     const url = 'https://api.themoviedb.org/3/movie/popular?api_key=' + apiKey + '&language=en-US';
     addMovies( url );
-})
-
-$( model ).on( 'modelchange' , () => {
-    renderMovies();
 } );
 
 function renderMovies() {
     $( '#resultMovieList' ).empty();
     let first_iteration = true;
-    console.log(model.movieList.length);
+    //console.log(model.movieList.length);
     for (const movie of model.movieList) { // Alle Filme im Model anzeigen
         $( '<div>' )
             .appendTo( '#resultMovieList' )
@@ -307,9 +254,9 @@ function renderMovies() {
                 showDetails( model.getMovie( movie.id ) )
             } )
             .addClass( 'movie-list-item' );
-        if(first_iteration){
+        if (first_iteration) {
             first_iteration = false;
-            showDetails( model.getMovie( movie.id ));
+            showDetails( model.getMovie( movie.id ) );
         }
     }
 }
@@ -323,7 +270,7 @@ function standardMovieBody(title: string) {
         .appendTo( '#nestedSequence' ).addClass( 'col' )
         .text( title ).addClass( 'media-heading' )
         .attr( 'id' , 'pageTitle' )
-        .addClass('page-header-blue');
+        .addClass( 'page-header-blue' );
     $( '<span>' ).appendTo( '#nestedSequence' ).addClass( 'col' ).attr( 'id' , 'searchMovieTitle' );
     $( '<div>' ).appendTo( '#nestedSequence' ).attr( 'id' , 'resultMovieList' ).addClass( 'col' );
     $( '<div>' ).appendTo( '#mainGridBody' ).attr( 'id' , 'resultMovieListDetail' ).addClass( 'col-sm-8' );
@@ -336,10 +283,9 @@ function showDetails(movie: Movie) {
         .text( movie.title )
         .addClass( 'media-heading' )
         .append(
-            $( '<small>')
-            .text( ' ' + movie.release_date.substring( 0 , 4 ) ).css('color','#lightgray')
+            $( '<small>' )
+                .text( ' ' + movie.release_date.substring( 0 , 4 ) ).css( 'color' , '#lightgray' )
         );
-
     if (movie.backdrop_path !== null) {
         $( '<img>' , {
             src: 'https://image.tmdb.org/t/p/w500' + movie.backdrop_path ,
@@ -351,9 +297,9 @@ function showDetails(movie: Movie) {
 
 
     $( '<span>' ).appendTo( '#resultMovieListDetail' ).text( 'average rating: ' + movie.vote_average + ' votes: ' + movie.vote_count )
-        .css('color','#fda2a2')
-        .css('font-weight','bold')
-        .css('font-size', '18px');
+        .css( 'color' , '#fda2a2' )
+        .css( 'font-weight' , 'bold' )
+        .css( 'font-size' , '18px' );
     let isAFavoriteMovie = false;
 
     $( '<span>' )
@@ -361,7 +307,7 @@ function showDetails(movie: Movie) {
         .attr( 'id' , 'favButton' )
         .addClass( 'glyphicon glyphicon-heart x1' )
         .css( 'color' , 'grey' )
-        .css('padding-left','20px')
+        .css( 'padding-left' , '20px' )
         .attr( 'title' , 'Add as a favorite Movie' )
         .on( 'click' , () => {
             if (isAFavoriteMovie) {
@@ -420,27 +366,25 @@ function addMovies(url: string) {
     model.resetMovieList();
     fetch( url , {
         method: 'get'
-    } ).then( (response) => {
-        //console.log(response.json());
-        return response.json();
-    } ).then( movies => {
+    } ).then( (response) => response.json()
+    ).then( movies => {
         for (const movie of movies.results) { // Going over the results
             model.addMovie( movie ); // Add every movie to the model
         }
+        renderMovies();
     } ).catch( (err) => {
         console.log( err );
     } );
 }
 
-function addMovie(url: string) {
+function addMovie(url: string): any {
     model.resetMovieList();
-    fetch( url , {
+    return fetch( url , {
         method: 'get'
-    } ).then( (response) => {
-        //console.log(response.json());
-        return response.json();
-    } ).then( movie => {
+    } ).then( (response) => response.json()
+    ).then( movie => {
         model.addMovie( movie ); // Add every movie to the model
+        return;
     } ).catch( (err) => {
         console.log( err );
     } );
@@ -457,7 +401,6 @@ function postData(destiny: string , data: any) {
             } )
         } ).then( (response) => {
         console.log( response );
-        //return response.json();
     } ).catch( (err) => {
         console.log( err );
     } );

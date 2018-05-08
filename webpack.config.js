@@ -21,15 +21,14 @@ module.exports = {
 				{use: ['css-loader']})},
 			{test: /\.less$/, use: ExtractTextWebpackPlugin.extract(
 				{use: ['css-loader', 'less-loader']})},
-            {test: /\.(jpg|png|svg|ttf|woff|woff2|eot)$/,
+            {test: /\.(jpg|png|svg|ttf|woff|woff2|eot|ico)$/,
                 use: 'url-loader?limit=100000'
             },
 			{
-				test: /\.(jpe?g|png|gif|svg)$/i,
+				test: /\.(jpe?g|png|gif|svg|ico)$/i,
                 exclude: /node_modules/,
 				loader: 'file-loader?name=./img/[name].[ext]'
 			},
-
 			{test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ },
 			{test: /\.ts$/, use: 'ts-loader', exclude: /node_modules/ }
 		]

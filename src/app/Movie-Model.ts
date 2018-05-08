@@ -16,16 +16,10 @@ export class DefaultMovieModel implements MovieModel {
 
     public addMovie(movie : Movie) {
         this.movieList.push(new Movie(movie.id, movie.title,  movie.release_date,  movie.overview, movie.vote_average, movie.vote_count, movie.backdrop_path));
-        this.notifyModelChange();
-    }
-
-    private notifyModelChange() {
-       this.$model.trigger('modelchange');
     }
 
     public resetMovieList() {
         this.movieList = [];
-        this.notifyModelChange();
     }
 
     public getMovie(id : number) {

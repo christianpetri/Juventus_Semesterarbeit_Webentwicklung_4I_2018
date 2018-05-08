@@ -7,7 +7,7 @@ export class Movie{
     public vote_average : string;
     public vote_count : string;
     public backdrop_path : string;
-    constructor(id, title, release_date, overview, vote_average, vote_count, backdrop_path){
+    constructor(id, title,release_date, overview, vote_average, vote_count, backdrop_path){
         this.id = id;
         this.title = title;
         this.release_date = release_date;

@@ -24,6 +24,9 @@ No login required. Every user has the same favorites.
 Several results (films) must be presented in an overview.
 Detail view of a result (movie) must be able to be displayed.
 
+## Page walkthrough
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/lcpZXcT0GOw/0.jpg)](https://www.youtube.com/watch?v=lcpZXcT0GOw)]
+
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
@@ -79,8 +82,8 @@ Backend online
 Connected successfully to the MongoDB
 
 ### Possible errors
--Not connected to the TMDb API (Are you offline?)
--Backend offline. (Restart Backend with npm run start)
+- Not connected to the TMDb API (Are you offline?)
+- Backend offline. (Restart Backend with npm run start)
 
 ## Built With
 ### Frontend
@@ -90,7 +93,6 @@ Connected successfully to the MongoDB
 * [JQuery](http://jquery.com/) - jQuery is a fast, small, and feature-rich JavaScript library
 * [Bootstrap](https://getbootstrap.com/) - Bootstrap is an open source toolkit for developing with HTML, CSS, and JS
 * [Lodash](https://lodash.com/) - A JavaScript utility library delivering consistency, modularity, performance, & extras
-* [Webpack](https://github.com/webpack/webpack) - A bundler for javascript and friends
 * [Rimraf](https://www.npmjs.com/package/rimraf) -  The UNIX command rm -rf for Node.js. Deep deletion (like rm -rf) module for Node.js that provides asynchronous deep- deletion of files and directories
 * [webpack](https://webpack.js.org/) - At its core, webpack is a static module bundler for modern JavaScript applications
 * [Webpack-dev-server](https://github.com/webpack/webpack-dev-server) - webpack-dev-server. Use webpack with a development server that provides live reloading
