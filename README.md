@@ -1,7 +1,7 @@
 [HF Juventus](https://technikerschule.juventus.ch/angebote/informatik/) term paper web development course (4th semester computer science, year 2018)
 
 # Project Movie World
-A web application that fetches and displays data from [TMDb](https://www.themoviedb.org) via its public API.
+A web application that fetches and displays data from [TMDb](https://www.themoviedb.org) via its API.
 
 ## Requirements:
 The user should be able to:

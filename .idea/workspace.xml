@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3de27988-1620-441f-968c-319c9c47ffd9" name="Default" comment="Added Linebreak to Readme">
+    <list default="true" id="3de27988-1620-441f-968c-319c9c47ffd9" name="Default" comment="Restructuring of the code base into &quot;export function&quot;">
+      <change afterPath="$PROJECT_DIR$/src/app/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/common.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/popularMovies.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/search.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/showHistory.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/topGenre.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/topRated.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/upcoming.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/favoriteMovies.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,85 +37,106 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+            <state relative-caret-position="102">
+              <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.test.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/app.test.ts">
+      <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webpack.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+            <state relative-caret-position="391">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".eslintrc.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.eslintrc.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
               <folding>
-                <element signature="e#0#14#0" expanded="true" />
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#11#30#0" expanded="true" />
+                <element signature="e#255#303#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file leaf-file-name="popularMovies.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/popularMovies.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
+            <state relative-caret-position="85">
+              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tsconfig.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <file leaf-file-name="topGenre.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/topGenre.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/less/index.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="model.test.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/model.test.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="23" column="92" selection-start-line="23" selection-start-column="92" selection-end-line="23" selection-end-column="92" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/app.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4777">
-              <caret line="347" column="4" selection-start-line="347" selection-start-column="4" selection-end-line="347" selection-end-column="4" />
+            <state relative-caret-position="493">
+              <caret line="29" column="8" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
               <folding>
-                <element signature="e#67#86#0" expanded="true" />
-                <element signature="n#!!block;n#doSearch#0" />
-                <element signature="n#!!block;n#doSearchForGenres#0" />
-                <element signature="n#!!block;n#getMovieHistoryTemplate#0" />
-                <element signature="n#!!block;n#renderMovies#0" />
-                <element signature="n#!!block;n#standardMovieBody#0" />
-                <element signature="n#!!block;n#movieIsFavorite#0" />
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/test.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" column="118" selection-start-line="27" selection-start-column="118" selection-end-line="27" selection-end-column="118" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="showHistory.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/showHistory.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="63" lean-forward="true" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/search.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/common.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="72" column="13" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#65#0" expanded="true" />
+                <element signature="n#!!block;n#renderStandardMovieTemplate#0" />
+                <element signature="n#!!block;n#makeUrlForAPI#0" />
                 <element signature="n#!!block;n#addMovies#0" />
-                <element signature="n#!!block;n#addMovie#0" />
+                <element signature="n#!!block;n#renderMovies#0" />
+                <element signature="n#!!block;n#movieIsFavorite#0" />
                 <element signature="n#!!block;n#postData#0" />
+                <element signature="n#!!block;n#addMovie#0" />
               </folding>
             </state>
           </provider>
@@ -121,15 +156,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>postData</find>
-      <find>movie-li</find>
-      <find>alert</find>
-      <find>pageTitle</find>
-      <find>movie-list-item</find>
-      <find>standardMovieBody</find>
-      <find>getTopRatedMovies</find>
-      <find>getUpcomingMovies</find>
-      <find>web ser</find>
       <find>sass</find>
       <find>add</find>
       <find>.movie-list-item</find>
@@ -138,11 +164,7 @@
       <find>test</find>
       <find>resolve</find>
       <find>addM</find>
-      <find>showDetails</find>
-      <find>movieIsFavorite</find>
-      <find>addMovies</find>
       <find>addMovie(</find>
-      <find>addMovie</find>
       <find>renderMovies</find>
       <find>renderMovies();</find>
       <find>Genre</find>
@@ -150,7 +172,20 @@
       <find>notifyModelChange</find>
       <find>console.log</find>
       <find>png</find>
+      <find>standardMovieBody</find>
       <find>doSearch</find>
+      <find>renderStandardMovieTemplate</find>
+      <find>addMovies</find>
+      <find>removeMovieFromFavoriteList</find>
+      <find>movieIsFavorite</find>
+      <find>route</find>
+      <find>addMovie</find>
+      <find>postData</find>
+      <find>doSearchForGenres</find>
+      <find>showDetails</find>
+      <find>'</find>
+      <find>parserOptions</find>
+      <find>&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>url</replace>
@@ -158,6 +193,10 @@
       <replace>pageNumber</replace>
       <replace>databaseURL</replace>
       <replace>standardMovieBody</replace>
+      <replace>renderStandardMovieTemplate</replace>
+      <replace>&quot;</replace>
+      <replace>commonrenderStandardMovieTemplate</replace>
+      <replace>'</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -178,11 +217,8 @@
         <option value="$PROJECT_DIR$/test/jest-config.js" />
         <option value="$PROJECT_DIR$/jest-config.js" />
         <option value="$PROJECT_DIR$/bs-config.json" />
-        <option value="$PROJECT_DIR$/.eslintrc.js" />
         <option value="$PROJECT_DIR$/src/app/movie-model.js" />
-        <option value="$PROJECT_DIR$/src/app/app.js" />
         <option value="$PROJECT_DIR$/src/app/movie-model.ts" />
-        <option value="$PROJECT_DIR$/src/app/constants.ts" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/test/model.test.js" />
         <option value="$PROJECT_DIR$/test/app.test.js.ts" />
@@ -194,12 +230,29 @@
         <option value="$PROJECT_DIR$/src/less/index.less" />
         <option value="$PROJECT_DIR$/src/app/Movie.ts" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/src/app/Movie-Model.ts" />
         <option value="$PROJECT_DIR$/test/app.test.ts" />
         <option value="$PROJECT_DIR$/test/model.test.ts" />
-        <option value="$PROJECT_DIR$/src/app/app.ts" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/app/common.js" />
+        <option value="$PROJECT_DIR$/src/app/generes.ts" />
+        <option value="$PROJECT_DIR$/src/app/route.js" />
+        <option value="$PROJECT_DIR$/src/app/upcoming.js" />
+        <option value="$PROJECT_DIR$/src/app/constants.ts" />
+        <option value="$PROJECT_DIR$/src/app/favoriteMovies.ts" />
+        <option value="$PROJECT_DIR$/src/app/popularmovies.ts" />
+        <option value="$PROJECT_DIR$/src/app/showHistory.ts" />
+        <option value="$PROJECT_DIR$/src/app/app.ts" />
+        <option value="$PROJECT_DIR$/webpack.config.js" />
+        <option value="$PROJECT_DIR$/src/app/upcoming.ts" />
+        <option value="$PROJECT_DIR$/src/app/topGenre.ts" />
+        <option value="$PROJECT_DIR$/src/app/test.ts" />
+        <option value="$PROJECT_DIR$/src/app/topRated.ts" />
+        <option value="$PROJECT_DIR$/src/app/popularMovies.ts" />
+        <option value="$PROJECT_DIR$/src/app/search.ts" />
+        <option value="$PROJECT_DIR$/src/app/common.ts" />
+        <option value="$PROJECT_DIR$/.eslintrc.js" />
+        <option value="$PROJECT_DIR$/src/app/app.js" />
       </list>
     </option>
   </component>
@@ -238,17 +291,6 @@
             <path>
               <item name="Juventus_Semesterarbeit_Webentwicklung_4I_2018" type="b2602c69:ProjectViewProjectNode" />
               <item name="Juventus_Semesterarbeit_Webentwicklung_4I_2018" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Juventus_Semesterarbeit_Webentwicklung_4I_2018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Juventus_Semesterarbeit_Webentwicklung_4I_2018" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Juventus_Semesterarbeit_Webentwicklung_4I_2018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Juventus_Semesterarbeit_Webentwicklung_4I_2018" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Juventus_Semesterarbeit_Webentwicklung_4I_2018" type="b2602c69:ProjectViewProjectNode" />
@@ -435,7 +477,8 @@
       <workItem from="1525700333655" duration="605000" />
       <workItem from="1525702636384" duration="3246000" />
       <workItem from="1525727000868" duration="14132000" />
-      <workItem from="1525791990698" duration="2269000" />
+      <workItem from="1525791990698" duration="2475000" />
+      <workItem from="1525804720709" duration="12479000" />
     </task>
     <task id="LOCAL-00001" summary="Next Button">
       <created>1520245334245</created>
@@ -640,7 +683,14 @@
       <option name="project" value="LOCAL" />
       <updated>1525793930313</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Added Linebreak to Readme">
+      <created>1525794277151</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1525794277151</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -676,7 +726,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="351006000" />
+    <option name="totallyTimeSpent" value="363691000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -691,50 +741,50 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.76425856" visible="true" weight="0.19968387" />
-      <window_info anchor="bottom" id="TODO" order="12" weight="0.32900432" />
-      <window_info anchor="bottom" id="Docker" order="17" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.5105374" side_tool="true" visible="true" weight="0.42701524" />
-      <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.49209693" weight="0.32897604" />
-      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.6496312" weight="0.3398693" />
-      <window_info id="npm" order="5" sideWeight="0.23574145" side_tool="true" visible="true" weight="0.19968387" />
-      <window_info id="Structure" order="3" sideWeight="0.49434572" side_tool="true" weight="0.24973656" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="16" sideWeight="0.48946258" visible="true" weight="0.42701524" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.49841937" weight="0.39935064" />
-      <window_info anchor="bottom" id="TypeScript" order="17" sideWeight="0.49947312" weight="0.32897604" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32897604" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" sideWeight="0.49841937" visible="true" weight="0.3278867" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.35089567" side_tool="true" weight="0.3398693" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6491043" weight="0.3398693" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49209693" weight="0.32897604" />
+      <window_info id="npm" order="2" sideWeight="0.24149108" side_tool="true" visible="true" weight="0.19968387" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4889357" weight="0.42701524" />
+      <window_info anchor="bottom" id="TypeScript" order="7" sideWeight="0.49947312" weight="0.32897604" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7585089" visible="true" weight="0.19968387" />
+      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49841937" weight="0.3278867" />
+      <window_info id="Structure" order="1" sideWeight="0.49434572" side_tool="true" weight="0.24973656" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49841937" weight="0.39935064" />
+      <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection Results" order="18" weight="0.32943925" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.32943925" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49841937" weight="0.3278867" />
-      <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49841937" weight="0.3278867" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="3" side_tool="true" weight="0.32995737" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49841937" weight="0.32866043" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info id="npm" order="2" sideWeight="0.22277227" side_tool="true" visible="true" weight="0.19968387" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.65015805" visible="true" weight="0.3398693" />
+      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
+      <window_info id="npm" order="2" sideWeight="0.23927392" side_tool="true" weight="0.19968387" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6491043" visible="true" weight="0.3398693" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7772277" visible="true" weight="0.19968387" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7607261" visible="true" weight="0.19968387" />
       <window_info id="Structure" order="1" sideWeight="0.49434572" side_tool="true" weight="0.24973656" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32900432" />
-      <window_info anchor="bottom" id="TypeScript" order="12" weight="0.32900432" />
+      <window_info anchor="bottom" id="TypeScript" order="7" sideWeight="0.49947312" weight="0.32897604" />
       <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.32943925" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49841937" weight="0.39935064" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49051633" weight="0.32900432" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.34984195" side_tool="true" weight="0.3409091" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4926238" weight="0.32900432" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49894625" weight="0.32792208" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49841937" weight="0.39935064" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4889357" weight="0.42701524" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.35089567" side_tool="true" weight="0.3398693" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49209693" weight="0.32897604" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49841937" weight="0.3278867" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49841937" weight="0.3278867" />
       <window_info anchor="right" id="Coverage" order="3" side_tool="true" weight="0.32995737" />
       <window_info id="Favorites" order="3" side_tool="true" />
     </layout-to-restore>
@@ -754,7 +804,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="top genres done" />
     <MESSAGE value="upcoming movies" />
     <MESSAGE value="upcoming movies added" />
     <MESSAGE value="removed some html an added the it as &quot;JavaScript&quot;" />
@@ -779,150 +828,18 @@
     <MESSAGE value="Added Video" />
     <MESSAGE value="Expanded the Readme" />
     <MESSAGE value="Added Linebreak to Readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Linebreak to Readme" />
+    <MESSAGE value="Restructuring of the code base into &quot;export function&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Restructuring of the code base into &quot;export function&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="19" />
+      <option name="time" value="22" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/app.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4777">
-          <caret line="347" column="4" selection-start-line="347" selection-start-column="4" selection-end-line="347" selection-end-column="4" />
-          <folding>
-            <element signature="e#67#86#0" expanded="true" />
-            <element signature="n#!!block;n#doSearch#0" />
-            <element signature="n#!!block;n#doSearchForGenres#0" />
-            <element signature="n#!!block;n#getMovieHistoryTemplate#0" />
-            <element signature="n#!!block;n#renderMovies#0" />
-            <element signature="n#!!block;n#standardMovieBody#0" />
-            <element signature="n#!!block;n#movieIsFavorite#0" />
-            <element signature="n#!!block;n#addMovies#0" />
-            <element signature="n#!!block;n#addMovie#0" />
-            <element signature="n#!!block;n#postData#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1853">
-          <caret line="188" column="12" selection-start-line="188" selection-start-column="12" selection-end-line="188" selection-end-column="12" />
-          <folding>
-            <element signature="e#67#86#0" expanded="true" />
-            <element signature="n#!!block;n#doSearch#0" />
-            <element signature="n#!!block;n#doSearchForGenres#0" />
-            <element signature="n#!!block;n#getMovieHistoryTemplate#0" />
-            <element signature="n#!!block;n#renderMovies#0" />
-            <element signature="n#!!block;n#standardMovieBody#0" />
-            <element signature="n#!!block;n#movieIsFavorite#0" />
-            <element signature="n#!!block;n#addMovies#0" />
-            <element signature="n#!!block;n#addMovie#0" />
-            <element signature="n#!!block;n#postData#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bs-config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#67#86#0" expanded="true" />
-            <element signature="n#!!block;n#doSearch#0" />
-            <element signature="n#!!block;n#doSearchForGenres#0" />
-            <element signature="n#!!block;n#getMovieHistoryTemplate#0" />
-            <element signature="n#!!block;n#renderMovies#0" />
-            <element signature="n#!!block;n#standardMovieBody#0" />
-            <element signature="n#!!block;n#movieIsFavorite#0" />
-            <element signature="n#!!block;n#addMovies#0" />
-            <element signature="n#!!block;n#addMovie#0" />
-            <element signature="n#!!block;n#postData#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/moviedetails.html" />
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="58" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bs-config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#67#86#0" expanded="true" />
-            <element signature="n#!!block;n#doSearch#0" />
-            <element signature="n#!!block;n#doSearchForGenres#0" />
-            <element signature="n#!!block;n#getMovieHistoryTemplate#0" />
-            <element signature="n#!!block;n#renderMovies#0" />
-            <element signature="n#!!block;n#standardMovieBody#0" />
-            <element signature="n#!!block;n#movieIsFavorite#0" />
-            <element signature="n#!!block;n#addMovies#0" />
-            <element signature="n#!!block;n#addMovie#0" />
-            <element signature="n#!!block;n#postData#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -965,7 +882,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.eslintrc.js" />
     <entry file="file://$PROJECT_DIR$/public/index.html" />
     <entry file="file://$PROJECT_DIR$/public/img/glyphicons-halflings-regular.svg" />
     <entry file="file://$PROJECT_DIR$/public/img/logo_tmdb.png" />
@@ -1106,13 +1022,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/constants.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/css/index.css" />
     <entry file="file://$PROJECT_DIR$/bs-config.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -1149,16 +1058,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/app.test.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/less/index.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1166,43 +1065,158 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="96" selection-start-line="3" selection-start-column="96" selection-end-line="3" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/model.test.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+        <state relative-caret-position="272">
+          <caret line="18" column="3" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="18" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/app.test.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/favoriteMovies.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+          <folding>
+            <element signature="e#1#36#0" expanded="true" />
+            <element signature="n#!!block;n#getfavoriteMovies#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/route.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/constants.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="61" lean-forward="true" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/upcoming.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/topRated.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/topGenre.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="8" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/test.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="118" selection-start-line="27" selection-start-column="118" selection-end-line="27" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/generes.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/popularMovies.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/showHistory.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="63" lean-forward="true" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/bundle-report.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-714">
+          <caret line="10" column="442" lean-forward="true" selection-start-line="10" selection-start-column="442" selection-end-line="10" selection-end-column="442" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+        <state relative-caret-position="102">
+          <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.ts">
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4777">
-          <caret line="347" column="4" selection-start-line="347" selection-start-column="4" selection-end-line="347" selection-end-column="4" />
+        <state relative-caret-position="391">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/search.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintrc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
           <folding>
-            <element signature="e#67#86#0" expanded="true" />
-            <element signature="n#!!block;n#doSearch#0" />
-            <element signature="n#!!block;n#doSearchForGenres#0" />
-            <element signature="n#!!block;n#getMovieHistoryTemplate#0" />
-            <element signature="n#!!block;n#renderMovies#0" />
-            <element signature="n#!!block;n#standardMovieBody#0" />
-            <element signature="n#!!block;n#movieIsFavorite#0" />
-            <element signature="n#!!block;n#addMovies#0" />
-            <element signature="n#!!block;n#addMovie#0" />
-            <element signature="n#!!block;n#postData#0" />
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#11#30#0" expanded="true" />
+            <element signature="e#255#303#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/src/app/common.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="23" column="92" selection-start-line="23" selection-start-column="92" selection-end-line="23" selection-end-column="92" />
+        <state relative-caret-position="189">
+          <caret line="72" column="13" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#65#0" expanded="true" />
+            <element signature="n#!!block;n#renderStandardMovieTemplate#0" />
+            <element signature="n#!!block;n#makeUrlForAPI#0" />
+            <element signature="n#!!block;n#addMovies#0" />
+            <element signature="n#!!block;n#renderMovies#0" />
+            <element signature="n#!!block;n#movieIsFavorite#0" />
+            <element signature="n#!!block;n#postData#0" />
+            <element signature="n#!!block;n#addMovie#0" />
+          </folding>
         </state>
       </provider>
     </entry>

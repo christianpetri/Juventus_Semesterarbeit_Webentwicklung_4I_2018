@@ -6,7 +6,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 module.exports = {
 	entry: {
-		app :'./src/app/app.ts',
+		app :'./src/app/app.js',
 		vendor : ['core-js','jquery','bootstrap','less']
 	},
 	output: {
@@ -21,12 +21,12 @@ module.exports = {
 				{use: ['css-loader']})},
 			{test: /\.less$/, use: ExtractTextWebpackPlugin.extract(
 				{use: ['css-loader', 'less-loader']})},
-            {test: /\.(jpg|png|svg|ttf|woff|woff2|eot|ico)$/,
-                use: 'url-loader?limit=100000'
-            },
+			{test: /\.(jpg|png|svg|ttf|woff|woff2|eot|ico)$/,
+				use: 'url-loader?limit=100000'
+			},
 			{
 				test: /\.(jpe?g|png|gif|svg|ico)$/i,
-                exclude: /node_modules/,
+				exclude: /node_modules/,
 				loader: 'file-loader?name=./img/[name].[ext]'
 			},
 			{test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ },
