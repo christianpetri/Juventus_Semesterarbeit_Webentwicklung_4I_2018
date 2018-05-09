@@ -12,7 +12,7 @@ export interface MovieModel {
 
 export class DefaultMovieModel implements MovieModel {
     public movieList: Movie [];
-    private $model = $(this);
+    //private $model = $(this);
 
     public addMovie(movie : Movie) {
         this.movieList.push(new Movie(movie.id, movie.title,  movie.release_date,  movie.overview, movie.vote_average, movie.vote_count, movie.backdrop_path));

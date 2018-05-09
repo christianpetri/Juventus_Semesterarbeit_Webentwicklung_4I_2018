@@ -14,8 +14,7 @@ test('connected to the database', ()=> {
 	$.get(url, function (data, status) {
 		console.log(status);
         console.log( jest );
-        const response = data;
-		expect(response).toEqual(expectedResponse);} );
+		expect(data).toEqual(expectedResponse);} );
 });
 
 test('expect', ()=> {

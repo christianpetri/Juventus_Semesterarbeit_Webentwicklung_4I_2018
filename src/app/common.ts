@@ -1,5 +1,4 @@
-import {apiKey , baseUrlForAPI , databaseURL} from "./constants";
-
+import {apiImageQuality , apiImageSecureBaseUrl , apiKey , baseUrlForAPI , baseUrlForBackend} from "./constants";
 import {DefaultMovieModel} from "./Movie-Model";
 import {Movie} from "./Movie";
 
@@ -20,20 +19,19 @@ export function renderStandardMovieTemplate(title: string) {
     $( '<div>' ).appendTo( '#mainGridBody' ).attr( 'id' , 'resultMovieListDetail' ).addClass( 'col-sm-8' );
 }
 
-export function makeUrlForAPI(option: string) : string {
-       return baseUrlForAPI + option  + '?api_key=' + apiKey + '&language=en-US';
+export function makeUrlForAPI(option: string , query: string = ''): string {
+    return baseUrlForAPI + option + '?api_key=' + apiKey + '&language=en-US' + query;
 }
 
-export function addMovies(url: string) {
+export function addMovies(url: string) : any {
     model.resetMovieList();
-    fetch( url , {
-        method: 'get'
-    } ).then( (response) => response.json()
+    return fetch( url ).then( (response) => response.json()
     ).then( movies => {
         for (const movie of movies.results) { // Going over the results
             model.addMovie( movie ); // Add every movie to the model
         }
         renderMovies();
+        return  movies.total_results;
     } ).catch( (err) => {
         console.log( err );
     } );
@@ -43,7 +41,7 @@ export function renderMovies() {
     $( '#resultMovieList' ).empty();
     let first_iteration = true;
     //console.log(model.movieList.length);
-    for (const movie of model.movieList) { // Alle Filme im Model anzeigen
+    for (const movie of model.movieList) { //Show all movies in the model
         $( '<div>' )
             .appendTo( '#resultMovieList' )
             .add( 'col-sm-5' )
@@ -71,13 +69,13 @@ function showDetails(movie: Movie) {
         );
     if (movie.backdrop_path !== null) {
         $( '<img>' , {
-            src: 'https://image.tmdb.org/t/p/w500' + movie.backdrop_path ,
-            width: '100%'
+            src: apiImageSecureBaseUrl + apiImageQuality + movie.backdrop_path ,
+            width: '100%' ,
+            alt: 'movie poster'
         } ).appendTo( '#resultMovieListDetail' ).addClass( '.img-fluid' ).css( 'padding-top' , '10px' );
     } else {
         $( '<div>' ).appendTo( '#resultMovieListDetail' ).text( 'No Image found' ).css( 'padding-top' , '10px' );
     }
-
 
     $( '<span>' ).appendTo( '#resultMovieListDetail' ).text( 'average rating: ' + movie.vote_average + ' votes: ' + movie.vote_count )
         .css( 'color' , '#fda2a2' )
@@ -119,28 +117,27 @@ function showDetails(movie: Movie) {
 
 function removeMovieFromFavoriteList(id: any) {
     postData( 'moviefavorite/remove' , {movieID: id} );
-    let favoriteButten =  $( '#favButton' );
-    favoriteButten.empty();
+    let favoriteButton = $( '#favButton' );
+    favoriteButton.empty();
     $( '<span>' ).appendTo( '#favButton' ).text( ' removed!' ).attr( 'id' , 'favButtonFade' );
     $( '#favButtonFade' ).fadeOut( 1000 );
-    favoriteButten.css( 'color' , 'black' ).attr( 'title' , 'Add as a favorite' );
+    favoriteButton.css( 'color' , 'black' ).attr( 'title' , 'Add as a favorite' );
 
 }
 
 function addMovieToFavoriteList(id: any) {
     postData( 'moviefavorite/add' , {movieID: id} );
-    let favoriteButten =  $( '#favButton' );
-    favoriteButten.empty();
+    let favoriteButton = $( '#favButton' );
+    favoriteButton.empty();
     $( '<span>' ).appendTo( '#favButton' ).text( ' added!' ).attr( 'id' , 'favButtonFade' );
     $( '#favButtonFade' ).fadeOut( 1000 );
-    favoriteButten.css( 'color' , 'red' ).attr( 'title' , 'Remove as a favorite' );
+    favoriteButton.css( 'color' , 'red' ).attr( 'title' , 'Remove as a favorite' );
 }
 
 function movieIsFavorite(id: any): any {
-    let url = databaseURL + 'ismovieafavorite?movieID=' + id;
-    return fetch( url , {
-        method: 'get'
-    } ).then( (response) => response.json() )
+    let url = baseUrlForBackend + 'ismovieafavorite?movieID=' + id;
+    return fetch( url )
+        .then( (response) => response.json() )
         .then( (responseData) => {
             return responseData;
         } )
@@ -149,7 +146,7 @@ function movieIsFavorite(id: any): any {
 
 export function postData(destiny: string , data: any) {
     //console.log(url + destiny);
-    fetch( databaseURL + '' + destiny ,
+    fetch( baseUrlForBackend + '' + destiny ,
         {
             method: 'post' ,
             body: JSON.stringify( data ) ,
@@ -165,9 +162,7 @@ export function postData(destiny: string , data: any) {
 
 export function addMovie(url: string): any {
     model.resetMovieList();
-    return fetch( url , {
-        method: 'get'
-    } ).then( (response) => response.json()
+    return fetch( url ).then( (response) => response.json()
     ).then( movie => {
         model.addMovie( movie ); // Add every movie to the model
         return;

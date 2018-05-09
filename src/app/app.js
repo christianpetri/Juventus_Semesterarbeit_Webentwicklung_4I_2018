@@ -18,20 +18,20 @@ import {renderTopGenrePage} from './topGenre';
 import {renderTopRatedMoviesPage} from './topRated';
 import {renderShowHistoryPage} from './showHistory';
 
-route( '/search' , function () {
+route( '/search' , function() {
 	renderSearchPage();
 });
 
-route( '/top' , function () {
+route( '/top' , function() {
 	renderTopRatedMoviesPage();
 } );
 
-route( '/topgenre' , function () {
+route( '/topgenre' , function() {
 	renderTopGenrePage();
 });
 
 //Upcoming movies
-route( '/' , function () {
+route( '/' , function() {
 	renderUpcomingMovies();
 } );
 
@@ -39,15 +39,15 @@ route( '/test' , function () {
 	renderTestPage();
 } );
 
-route( 'showhistory' , function () {
+route( 'showhistory' , function() {
 	renderShowHistoryPage();
 });
 
-route( 'favoriteMovie' , function () {
+route( 'favoriteMovie' , function() {
 	renderFavoriteMoviePage();
 });
 
-route( 'popularmovies' , function () {
+route( 'popularmovies' , function() {
 	renderPopularMoviesPage();
 } );
 

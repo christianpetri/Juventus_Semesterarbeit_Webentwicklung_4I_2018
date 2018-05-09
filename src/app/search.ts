@@ -14,33 +14,22 @@ export function renderSearchPage() {
         .css( 'width' , '90%' )
         .css( 'margin-bottom' , '10px' )
         .text( ' Search the Movie Database ' )
-        .on( 'click', () => {
+        .on( 'click' , () => {
             doSearch();
         } );
-
-    $( '#searchMovieTitle' ).wrap( '<form>');
+    $( '#searchMovieTitle' ).wrap( '<form>' );
 }
 
 function doSearch() {
-    //$( '#resultMovieListDetail' ).empty();
-    alert('hello');
     const searchQuery = $( '#searchQueryInput' ).val();
     if (searchQuery != '') {
-        const currentPage = 1;
-        let url = makeUrlForAPI('search/movie');
-        url  += '&query=' + searchQuery + '&page=' + currentPage + '&include_adult=false';
-        addMovies( url );
-        fetch( url , {
-            method: 'get'
-        } ).then( (response) => response.json()
-        ).then( result => {
+        let url = makeUrlForAPI( 'search/movie','&query=' + searchQuery );
+        addMovies( url ).then( total_results =>{
             postData( 'moviesearchquery' , {
                 searchQuery: searchQuery ,
-                totalResults: result.total_results
-            } );
-        } ).catch( (err) => {
-            console.log( err );
-        } );
+                totalResults: total_results
+            });
+        });
     } else {
         console.log( 'Please enter a search query' );
     }

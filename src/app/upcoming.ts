@@ -1,4 +1,3 @@
-import './common';
 import {addMovies , makeUrlForAPI , renderStandardMovieTemplate} from "./common";
 
 export function renderUpcomingMovies(){

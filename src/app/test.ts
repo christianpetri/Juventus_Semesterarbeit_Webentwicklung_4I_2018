@@ -1,8 +1,9 @@
-import {apiKey , databaseURL} from "./constants";
+import {baseUrlForBackend} from "./constants";
+import {makeUrlForAPI} from "./common";
 
 export function renderTestPage(){
     $( '#content' ).empty();
-    fetch( databaseURL , {
+    fetch( baseUrlForBackend , {
         method: 'get'
     } ).then( (response) => {
         if (response.status == 200) {
@@ -13,22 +14,21 @@ export function renderTestPage(){
         $( '<div>' ).appendTo( '#content' ).text( response.response );
     } ).catch( (err) => {
         $( '<div>' ).appendTo( '#content' ).text( 'Backend offline. (Restart Backend with npm run start)' );
-        console.log( err );
+        console.warn( err );
     } );
 
-    const url = 'https://api.themoviedb.org/3/search/movie?api_key=' + apiKey + '&language=en-US&query=test';
-    fetch( url , {
-        method: 'get'
-    } ).then( (response) => {
-        console.log( response.status );
-        if (response.status == 200) {
-            $( '<div>' ).appendTo( '#content' ).text( 'Connected to the TMDb API' );
-        }
-        if (response.status == 401) {
-            $( '<div>' ).appendTo( '#content' ).text( 'Not connected to the TMDb API (Do you have the correct API Key?' );
-        }
+    fetch( makeUrlForAPI('search/movie','&query=test') )
+        .then(response => response.json())
+        .then( (response) => {
+            if(response.status_message != null){
+                console.log( response.status_message);
+                $( '<div>' ).appendTo( '#content' ).text( 'TMDb '+ response.status_message);
+            } else {
+                $( '<div>' ).appendTo( '#content' ).text('Connected to the TMDb API');
+            }
+
     } ).catch( (err) => {
         $( '<div>' ).appendTo( '#content' ).text( 'Not connected to the TMDb API (Are you offline?)' );
-        console.log( err );
+        console.warn( err );
     } );
 }

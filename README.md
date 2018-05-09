@@ -97,27 +97,38 @@ Connected successfully to the MongoDB
 ### Possible errors
 - Not connected to the TMDb API (Are you offline?)
 - Backend offline. (Restart Backend with npm run start)
+    - As long the Backend is offline, there can't be a "Connected successfully to the MongoDB" message
+- TMDb Invalid API key: You must be granted a valid key.
 
 ## Built With
 ### Frontend
 * [NodeJS](https://nodejs.org/en/) - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine
 * [NPM](https://www.npmjs.com/) - npm is the package manager for JavaScript
+    - handles all the packages for project
 * [TSLint](https://palantir.github.io/tslint/) - TSLint is an extensible static analysis tool that checks TypeScript code
 * [JQuery](http://jquery.com/) - jQuery is a fast, small, and feature-rich JavaScript library
+    - is mainly used to fetch data from the backend and the TMBb API, and to render the fetched data.
 * [Bootstrap](https://getbootstrap.com/) - Bootstrap is an open source toolkit for developing with HTML, CSS, and JS
+    - is mainly used for the navigation bar, the buttons and to place the HTML / CSS into the responsible bootstrap grid
 * [Lodash](https://lodash.com/) - A JavaScript utility library delivering consistency, modularity, performance, & extras
 * [Rimraf](https://www.npmjs.com/package/rimraf) -  The UNIX command rm -rf for Node.js. Deep deletion (like rm -rf) module for Node.js that provides asynchronous deep- deletion of files and directories
 * [webpack](https://webpack.js.org/) - At its core, webpack is a static module bundler for modern JavaScript applications
 * [Webpack-dev-server](https://github.com/webpack/webpack-dev-server) - webpack-dev-server. Use webpack with a development server that provides live reloading
 * [Typescript](https://www.typescriptlang.org/) - TypeScript brings you optional static type-checking along with the latest ECMAScript features.
-* [Jest für unit testing](https://facebook.github.io/jest/) - Delightful JavaScript Testing
+    - is used to write all the functions and classes
+* [Jest](https://facebook.github.io/jest/) - Delightful JavaScript Testing
+    - is used to write the unit tests
 * [less](http://lesscss.org/) - It's CSS, with just a little more
+    - is used to handle the style of the project (the style is also supported by bootstrap)
 
 ### Backend
 * [NodeJS](https://nodejs.org/en/) - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine
 * [NPM](https://www.npmjs.com/) - npm is the package manager for JavaScript
+    -is used in part to start the backend web server
 * [Express](http://expressjs.com/de/) - Fast, unopinionated, minimalist web framework for NodeJS
+    -is used in part to handle the requests for the frontend. It negotiates between the frontend and the MongoDB.
 * [MongoDB](https://www.mongodb.com/) - Ad hoc queries, indexing, and real time aggregation provide powerful ways to access and analyze your data
+    - is used to store the search history and the favorite movies
 
 ## Versioning
 [GitHub](http://github.com) for versioning. For the versions available, see the [Juventus_Semesterarbeit_Webentwicklung_4I_2018](https://github.com/christianpetri/Juventus_Semesterarbeit_Webentwicklung_4I_2018).

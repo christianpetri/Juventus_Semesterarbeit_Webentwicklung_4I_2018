@@ -1,5 +1,4 @@
-import {apiKey} from "./constants";
-import {addMovies} from "./common";
+import {addMovies , makeUrlForAPI} from "./common";
 
 export function renderTopGenrePage() {
     $( '#content' ).empty();
@@ -13,29 +12,30 @@ export function renderTopGenrePage() {
     $( '<div>' ).appendTo( '#titleTopMovies' ).attr( 'id' , 'resultMovieList' );
     $( '<div>' ).appendTo( '#mainGridBodyGenre' ).attr( 'id' , 'resultMovieListDetail' ).addClass( 'col-md-7' );
 
-    const url = 'https://api.themoviedb.org/3/genre/movie/list?api_key=' + apiKey + '&language=en-US';
-    $.get( url , function (data) { // URL with movies that meet the search criteria
-        const genre = data.genres;
-        for (let i = 0; i < genre.length; i++) {
-            const genreID: number = genre[i].id;
-            $( '<div>' ).appendTo( '#genres' )
-                .text( genre[i].name )
-                .addClass( 'movie-list-item' )
-                .on( 'click' , () => {
-                    $( '#resultMovieListTitle' ).empty();
-                    $( '<h1>' ).appendTo( '#resultMovieListTitle' ).text( genre[i].name ).addClass( 'media-heading' ).addClass( 'page-header-blue' );
-                    doSearchForGenres( {genreID: genreID} );
-                } );
-        }
-    } );
+    fetch(makeUrlForAPI('genre/movie/list'))
+        .then( response => response.json())
+        .then( response => {
+            const genre = response.genres;
+            for (let i = 0; i < genre.length; i++) {
+                let genreID: number = genre[i].id;
+                $( '<div>' ).appendTo( '#genres' )
+                    .text( genre[i].name )
+                    .addClass( 'movie-list-item' )
+                    .on( 'click' , () => {
+                        $( '#resultMovieListTitle' ).empty();
+                        doSearchForGenres(genreID);
+                        $( '<h1>' ).appendTo( '#resultMovieListTitle' ).text( genre[i].name ).addClass( 'media-heading' ).addClass( 'page-header-blue' );
+                    } );
+            }
+        }).catch( error => console.warn( error ) );
 }
 
-function doSearchForGenres(parameters: { genreID: any }) {
-    let genreID = parameters.genreID;
-    //model.resetMovieList();
+function doSearchForGenres(genreID: number) {
     $( '#resultMovieListDetail' ).empty();
     $( '<h1>' ).appendTo( '#resultMovieList' ).text( '' ).addClass( 'media-heading' );
-    const url = 'https://api.themoviedb.org/3/discover/movie?&api_key=' + apiKey + '&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=' + genreID;
-    addMovies( url );
+    //const url = 'https://api.themoviedb.org/3/discover/movie?&api_key=' + apiKey + '&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=' + genreID;
+
+    //addMovies( url );
+    addMovies( makeUrlForAPI('discover/movie' , '&sort_by=popularity.desc&include_adult=false&include_video=false&with_genres=' + genreID) );
 }
 
