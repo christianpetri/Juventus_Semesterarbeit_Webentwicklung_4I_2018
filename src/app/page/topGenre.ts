@@ -1,4 +1,4 @@
-import {addMovies , makeUrlForAPI} from "./common";
+import {addMovies , makeUrlForAPI} from "../common";
 
 export function renderTopGenrePage() {
     $( '#content' ).empty();

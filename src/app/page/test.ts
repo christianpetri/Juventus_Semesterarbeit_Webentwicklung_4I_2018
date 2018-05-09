@@ -1,5 +1,5 @@
-import {baseUrlForBackend} from "./constants";
-import {makeUrlForAPI} from "./common";
+import {baseUrlForBackend} from "../constants";
+import {makeUrlForAPI} from "../common";
 
 export function renderTestPage(){
     $( '#content' ).empty();

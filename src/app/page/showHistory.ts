@@ -1,4 +1,4 @@
-import {renderStandardMovieTemplate} from "./common";
+import {renderStandardMovieTemplate} from "../common";
 
 export function renderShowHistoryPage() {
     $( '#content' ).empty();

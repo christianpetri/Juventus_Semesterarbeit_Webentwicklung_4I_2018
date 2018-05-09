@@ -7,16 +7,17 @@ import route from 'riot-route';
 import '../less/index.less';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../img/logo_tmdb.png';
+import '../img/favicon.ico';
 
 //import any = jasmine.any;
-import {renderUpcomingMovies} from './upcoming';
-import {renderTestPage} from './test';
-import {renderFavoriteMoviePage} from './favoriteMovies';
-import {renderPopularMoviesPage} from './popularMovies';
-import {renderSearchPage} from './search';
-import {renderTopGenrePage} from './topGenre';
-import {renderTopRatedMoviesPage} from './topRated';
-import {renderShowHistoryPage} from './showHistory';
+import {renderUpcomingMovies} from './page/upcoming';
+import {renderTestPage} from './page/test';
+import {renderFavoriteMoviePage} from './page/favoriteMovies';
+import {renderPopularMoviesPage} from './page/popularMovies';
+import {renderSearchPage} from './page/search';
+import {renderTopGenrePage} from './page/topGenre';
+import {renderTopRatedMoviesPage} from './page/topRated';
+import {renderShowHistoryPage} from './page/showHistory';
 
 route( '/search' , function() {
 	renderSearchPage();

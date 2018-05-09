@@ -1,4 +1,4 @@
-import {addMovie , makeUrlForAPI , renderMovies , renderStandardMovieTemplate} from "./common";
+import {addMovie , makeUrlForAPI , renderMovies , renderStandardMovieTemplate} from "../common";
 
 export function renderFavoriteMoviePage(){
     renderStandardMovieTemplate( 'Favorite Movie' );

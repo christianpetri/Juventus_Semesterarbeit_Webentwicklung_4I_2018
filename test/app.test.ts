@@ -12,8 +12,9 @@ test('add Movie to []', ()=> {
     let movie = new Movie('13','Movie Title','20181402','overview', '10','100','http://image');
     model.resetMovieList();
     model.addMovie(movie);
-    for (const movie of model.movieList) { // Alle Filme im Model anzeigen
+    for (const movie of model.movieList) { //Show all the movies from the model
              expect(movie.title).toBe('Movie Title');
              expect(movie.id).toBe('13');
     }
 });
+

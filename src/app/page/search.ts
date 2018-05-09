@@ -1,15 +1,16 @@
-import {addMovies , makeUrlForAPI , postData , renderStandardMovieTemplate} from "./common";
+import {addMovies , makeUrlForAPI , postData , renderStandardMovieTemplate} from "../common";
 
 export function renderSearchPage() {
     renderStandardMovieTemplate( 'Search' );
-    $( '<input>' ).appendTo( '#searchMovieTitle' )
+    $('<form>').appendTo('#searchMovieTitle' ).attr('id','searchMovieTitleForm' );
+    $( '<input>' ).appendTo( '#searchMovieTitleForm' )
         .attr( 'id' , 'searchQueryInput' )
         .attr( 'type' , 'text' )
         .css( 'width' , '90%' )
         .attr( 'placeholder' , 'Search for a movie' )
         .prop( 'required' , true );
 
-    $( '<button>' ).appendTo( '#searchMovieTitle' )
+    $( '<button>' ).appendTo( '#searchMovieTitleForm' )
         .addClass( 'btn btn-primary btn-sm' )
         .css( 'width' , '90%' )
         .css( 'margin-bottom' , '10px' )
@@ -17,7 +18,6 @@ export function renderSearchPage() {
         .on( 'click' , () => {
             doSearch();
         } );
-    $( '#searchMovieTitle' ).wrap( '<form>' );
 }
 
 function doSearch() {
