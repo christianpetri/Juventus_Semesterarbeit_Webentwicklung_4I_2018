@@ -139,7 +139,7 @@ Backend connected successfully to the MongoDB
 ### Frontend
 ![Overview over the frontend files](/appOverviewAfterCleanUp.png)
 The project evolves around the file app.js. All the common elements and functions are put into the file common.js.
-For pages that needed a custom layout and functions reside in the folder named 'page'
+For pages that needed a custom layout and functions reside in the folder named 'page'.
 
 ### Backend
 ![Overview over the backend files](/appOverviewBackend.png)
