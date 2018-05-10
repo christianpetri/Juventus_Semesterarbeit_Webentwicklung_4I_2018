@@ -12,8 +12,8 @@ export function renderTopGenrePage() {
     $( '<div>' ).appendTo( '#titleTopMovies' ).attr( 'id' , 'resultMovieList' );
     $( '<div>' ).appendTo( '#mainGridBodyGenre' ).attr( 'id' , 'resultMovieListDetail' ).addClass( 'col-md-7' );
 
-    fetch(makeUrlForAPI('genre/movie/list'))
-        .then( response => response.json())
+    fetch( makeUrlForAPI( 'genre/movie/list' ) )
+        .then( response => response.json() )
         .then( response => {
             const genre = response.genres;
             for (let i = 0; i < genre.length; i++) {
@@ -23,11 +23,11 @@ export function renderTopGenrePage() {
                     .addClass( 'movie-list-item' )
                     .on( 'click' , () => {
                         $( '#resultMovieListTitle' ).empty();
-                        doSearchForGenres(genreID);
+                        doSearchForGenres( genreID );
                         $( '<h1>' ).appendTo( '#resultMovieListTitle' ).text( genre[i].name ).addClass( 'media-heading' ).addClass( 'page-header-blue' );
                     } );
             }
-        }).catch( error => console.warn( error ) );
+        } ).catch( error => console.warn( error ) );
 }
 
 function doSearchForGenres(genreID: number) {
@@ -36,6 +36,6 @@ function doSearchForGenres(genreID: number) {
     //const url = 'https://api.themoviedb.org/3/discover/movie?&api_key=' + apiKey + '&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=' + genreID;
 
     //addMovies( url );
-    addMovies( makeUrlForAPI('discover/movie' , '&sort_by=popularity.desc&include_adult=false&include_video=false&with_genres=' + genreID) );
+    addMovies( makeUrlForAPI( 'discover/movie' , '&sort_by=popularity.desc&include_adult=false&include_video=false&with_genres=' + genreID ) );
 }
 

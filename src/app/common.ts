@@ -4,6 +4,11 @@ import {Movie} from "./Movie";
 
 let model = new DefaultMovieModel();
 
+export function renderStandardMoviePage(title: string, apiRequest: string) {
+    renderStandardMovieTemplate( title );
+    addMovies( makeUrlForAPI( apiRequest ) );
+}
+
 export function renderStandardMovieTemplate(title: string) {
     $( '#content' ).empty();
     $( '<div>' ).appendTo( '#content' ).addClass( 'row' ).attr( 'id' , 'mainGridBody' );
@@ -23,6 +28,15 @@ export function makeUrlForAPI(option: string , query: string = ''): string {
     return baseUrlForAPI + option + '?api_key=' + apiKey + '&language=en-US' + query;
 }
 
+export function makeUrlForBackend(option: string , query: string = ''): string {
+    if(query != ''){
+        return baseUrlForBackend + option + '?' + query;
+    } else {
+        return baseUrlForBackend + option;
+    }
+
+}
+
 export function addMovies(url: string) : any {
     model.resetMovieList();
     return fetch( url ).then( (response) => response.json()
@@ -32,6 +46,17 @@ export function addMovies(url: string) : any {
         }
         renderMovies();
         return  movies.total_results;
+    } ).catch( (err) => {
+        console.log( err );
+    } );
+}
+
+export function addMovie(url: string): any {
+    model.resetMovieList();
+    return fetch( url ).then( (response) => response.json()
+    ).then( movie => {
+        model.addMovie( movie ); // Add every movie to the model
+        return;
     } ).catch( (err) => {
         console.log( err );
     } );
@@ -115,6 +140,15 @@ function showDetails(movie: Movie) {
     $( '<div>' ).appendTo( '#resultMovieListDetail' ).text( movie.overview );
 }
 
+function movieIsFavorite(id: any): any {
+    return fetch( makeUrlForBackend('is/movie/a/favorite','movieID=' + id) )
+        .then( (response) => response.json() )
+        .then( (responseData) => {
+            return responseData;
+        } )
+        .catch( error => console.warn( error ) );
+}
+
 function removeMovieFromFavoriteList(id: any) {
     postData( 'moviefavorite/remove' , {movieID: id} );
     let favoriteButton = $( '#favButton' );
@@ -127,26 +161,15 @@ function removeMovieFromFavoriteList(id: any) {
 
 function addMovieToFavoriteList(id: any) {
     postData( 'moviefavorite/add' , {movieID: id} );
-    let favoriteButton = $( '#favButton' );
+    let favoriteButton = $( '#favButton');
     favoriteButton.empty();
     $( '<span>' ).appendTo( '#favButton' ).text( ' added!' ).attr( 'id' , 'favButtonFade' );
     $( '#favButtonFade' ).fadeOut( 1000 );
     favoriteButton.css( 'color' , 'red' ).attr( 'title' , 'Remove as a favorite' );
 }
 
-function movieIsFavorite(id: any): any {
-    let url = baseUrlForBackend + 'ismovieafavorite?movieID=' + id;
-    return fetch( url )
-        .then( (response) => response.json() )
-        .then( (responseData) => {
-            return responseData;
-        } )
-        .catch( error => console.warn( error ) );
-}
-
 export function postData(destiny: string , data: any) {
-    //console.log(url + destiny);
-    fetch( baseUrlForBackend + '' + destiny ,
+    fetch( makeUrlForBackend(destiny) ,
         {
             method: 'post' ,
             body: JSON.stringify( data ) ,
@@ -160,13 +183,3 @@ export function postData(destiny: string , data: any) {
     } );
 }
 
-export function addMovie(url: string): any {
-    model.resetMovieList();
-    return fetch( url ).then( (response) => response.json()
-    ).then( movie => {
-        model.addMovie( movie ); // Add every movie to the model
-        return;
-    } ).catch( (err) => {
-        console.log( err );
-    } );
-}

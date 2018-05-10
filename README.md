@@ -90,9 +90,9 @@ Start the frontend (npm run start), the backend (npm run start) and the MongoDB,
 http://localhost:8000/?#test
 ```
 ### Success
-Connected to the TMDb API
-Backend online
-Connected successfully to the MongoDB
+Connected to the TMDb API<br/>
+Backend online<br/>
+Backend connected successfully to the MongoDB
 
 ### Possible errors
 - Not connected to the TMDb API (Are you offline?)
@@ -131,13 +131,20 @@ Connected successfully to the MongoDB
 * [NPM](https://www.npmjs.com/) - npm is the package manager for JavaScript
     -is used in part to start the backend web server
 * [Express](http://expressjs.com/de/) - Fast, unopinionated, minimalist web framework for NodeJS
-    -is used in part to handle the requests for the frontend. It negotiates between the frontend and the MongoDB.
+    - is used in part to handle the requests for the frontend. It negotiates between the frontend and the MongoDB.
 * [MongoDB](https://www.mongodb.com/) - Ad hoc queries, indexing, and real time aggregation provide powerful ways to access and analyze your data
     - is used to store the search history and the favorite movies
 
-## Codebase
-### Overview over the files in the frontend
-![Overview over the files](/appOverview.png)
+## Codebase brief
+### Frontend
+![Overview over the frontend files](/appOverviewAfterCleanUp.png)
+The project evolves around the file app.js. All the common elements and functions are put into the file common.js. < br/>
+For pages that needed a custom layout / functions reside in the folder named 'page'
+
+### Backend
+![Overview over the backen files](/appOverviewBackend.png)
+The core code for the backend is currently in the file app.ts and has around 280 lines of code. <br/>
+In the future the lines of code can be reduced and the functions might be broken into different files.
 
 ## Versioning
 [GitHub](http://github.com) for versioning. For the versions available, see the [Juventus_Semesterarbeit_Webentwicklung_4I_2018](https://github.com/christianpetri/Juventus_Semesterarbeit_Webentwicklung_4I_2018).

@@ -1,4 +1,4 @@
-/*import*/
+
 import 'bootstrap';
 import 'less';
 import 'riot-route';
@@ -8,39 +8,37 @@ import '../less/index.less';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../img/logo_tmdb.png';
 import '../img/favicon.ico';
-
 //import any = jasmine.any;
-import {renderUpcomingMovies} from './page/upcoming';
-import {renderTestPage} from './page/test';
-import {renderFavoriteMoviePage} from './page/favoriteMovies';
-import {renderPopularMoviesPage} from './page/popularMovies';
+
+import {renderStandardMoviePage} from './common';
+
 import {renderSearchPage} from './page/search';
 import {renderTopGenrePage} from './page/topGenre';
-import {renderTopRatedMoviesPage} from './page/topRated';
 import {renderShowHistoryPage} from './page/showHistory';
+import {renderFavoriteMoviePage} from './page/favoriteMovies';
+import {renderTestPage} from './page/test';
+
+//Upcoming movies
+route( '/' , function() {
+	renderStandardMoviePage('Upcoming Movies','movie/upcoming');
+} );
 
 route( '/search' , function() {
 	renderSearchPage();
 });
-
-route( '/top' , function() {
-	renderTopRatedMoviesPage();
+route( 'popularMovies' , function() {
+	renderStandardMoviePage( 'Popular Movies' , 'movie/popular' );
 } );
 
-route( '/topgenre' , function() {
+route( '/topRated' , function() {
+	renderStandardMoviePage( 'Top Rated Movies' , 'movie/top_rated' );
+} );
+
+route( '/topGenre' , function() {
 	renderTopGenrePage();
 });
 
-//Upcoming movies
-route( '/' , function() {
-	renderUpcomingMovies();
-} );
-
-route( '/test' , function () {
-	renderTestPage();
-} );
-
-route( 'showhistory' , function() {
+route( 'showHistory' , function() {
 	renderShowHistoryPage();
 });
 
@@ -48,8 +46,8 @@ route( 'favoriteMovie' , function() {
 	renderFavoriteMoviePage();
 });
 
-route( 'popularmovies' , function() {
-	renderPopularMoviesPage();
+route( '/test' , function () {
+	renderTestPage();
 } );
 
 route.stop(); // clear all the old router callbacks

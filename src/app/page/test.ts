@@ -1,33 +1,30 @@
-import {baseUrlForBackend} from "../constants";
-import {makeUrlForAPI} from "../common";
+import {makeUrlForAPI , makeUrlForBackend} from "../common";
 
-export function renderTestPage(){
+export function renderTestPage() {
     $( '#content' ).empty();
-    fetch( baseUrlForBackend , {
-        method: 'get'
-    } ).then( (response) => {
-        if (response.status == 200) {
-            $( '<div>' ).appendTo( '#content' ).text( 'Backend is online' );
-        }
-        return response.json();
-    } ).then( (response) => {
+    fetch( makeUrlForBackend( '' ) )
+        .then( (response) => {
+            if (response.status == 200) {
+                $( '<div>' ).appendTo( '#content' ).text( 'Backend is online' );
+            }
+            return response.json();
+        } ).then( (response) => {
         $( '<div>' ).appendTo( '#content' ).text( response.response );
     } ).catch( (err) => {
         $( '<div>' ).appendTo( '#content' ).text( 'Backend offline. (Restart Backend with npm run start)' );
         console.warn( err );
     } );
 
-    fetch( makeUrlForAPI('search/movie','&query=test') )
-        .then(response => response.json())
+    fetch( makeUrlForAPI( 'search/movie' , '&query=test' ) )
+        .then( response => response.json() )
         .then( (response) => {
-            if(response.status_message != null){
-                console.log( response.status_message);
-                $( '<div>' ).appendTo( '#content' ).text( 'TMDb '+ response.status_message);
+            if (response.status_message != null) {
+                console.log( response.status_message );
+                $( '<div>' ).appendTo( '#content' ).text( 'TMDb ' + response.status_message );
             } else {
-                $( '<div>' ).appendTo( '#content' ).text('Connected to the TMDb API');
+                $( '<div>' ).appendTo( '#content' ).text( 'Connected to the TMDb API' );
             }
-
-    } ).catch( (err) => {
+        } ).catch( (err) => {
         $( '<div>' ).appendTo( '#content' ).text( 'Not connected to the TMDb API (Are you offline?)' );
         console.warn( err );
     } );

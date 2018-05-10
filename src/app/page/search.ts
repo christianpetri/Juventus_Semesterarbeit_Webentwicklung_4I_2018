@@ -2,7 +2,7 @@ import {addMovies , makeUrlForAPI , postData , renderStandardMovieTemplate} from
 
 export function renderSearchPage() {
     renderStandardMovieTemplate( 'Search' );
-    $('<form>').appendTo('#searchMovieTitle' ).attr('id','searchMovieTitleForm' );
+    $( '<form>' ).appendTo( '#searchMovieTitle' ).attr( 'id' , 'searchMovieTitleForm' );
     $( '<input>' ).appendTo( '#searchMovieTitleForm' )
         .attr( 'id' , 'searchQueryInput' )
         .attr( 'type' , 'text' )
@@ -23,13 +23,13 @@ export function renderSearchPage() {
 function doSearch() {
     const searchQuery = $( '#searchQueryInput' ).val();
     if (searchQuery != '') {
-        let url = makeUrlForAPI( 'search/movie','&query=' + searchQuery );
-        addMovies( url ).then( total_results =>{
+        let url = makeUrlForAPI( 'search/movie' , '&query=' + searchQuery );
+        addMovies( url ).then( total_results => {
             postData( 'moviesearchquery' , {
                 searchQuery: searchQuery ,
                 totalResults: total_results
-            });
-        });
+            } );
+        } );
     } else {
         console.log( 'Please enter a search query' );
     }
