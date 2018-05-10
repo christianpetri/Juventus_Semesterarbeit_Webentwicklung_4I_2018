@@ -138,12 +138,12 @@ Backend connected successfully to the MongoDB
 ## Codebase brief
 ### Frontend
 ![Overview over the frontend files](/appOverviewAfterCleanUp.png)
-The project evolves around the file app.js. All the common elements and functions are put into the file common.js. < br/>
-For pages that needed a custom layout / functions reside in the folder named 'page'
+The project evolves around the file app.js. All the common elements and functions are put into the file common.js.
+For pages that needed a custom layout and functions reside in the folder named 'page'
 
 ### Backend
-![Overview over the backen files](/appOverviewBackend.png)
-The core code for the backend is currently in the file app.ts and has around 280 lines of code. <br/>
+![Overview over the backend files](/appOverviewBackend.png)
+The core code for the backend is currently in the file app.ts and has around 280 lines of code.
 In the future the lines of code can be reduced and the functions might be broken into different files.
 
 ## Versioning
